@@ -14,6 +14,11 @@
     "tests"
   ],
   "devDependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap-sass-official": "~3.3.5",
     "angular": "~1.4.6"
+  },
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5"
   }
 }

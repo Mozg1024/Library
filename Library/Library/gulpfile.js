@@ -1,11 +1,15 @@
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    concat = require('gulp-concat');
+    csso = require('gulp-csso'),
+    inject = require('gulp-inject'),
+    concat = require('gulp-concat'),
+    filter = require('gulp-filter'),
+    bower = require('main-bower-files'),
+    wiredep = require('wiredep').stream;
 
 // define the default task and add the watch task to it
-gulp.task('default', ['watch', 'build-css']);
+gulp.task('default', ['watch', 'html']);
 
 // configure the jshint task
 gulp.task('jshint', function () {
@@ -19,10 +23,36 @@ gulp.task('watch', function () {
     gulp.watch('source/Scripts/**/*.js', ['jshint']);
 });
 
-//build scss
-gulp.task('build-css', function () {
-    return gulp.src('source/Content/styles/**/*.scss')
+gulp.task('styles', function(){
+    var injectAppFiles = gulp.src('source/**/*.scss', {read: false});
+
+    function transformFilepath(filepath) {
+        return '@import "' + filepath + '";';
+    }
+
+    var injectAppOptions = {
+        transform: transformFilepath,
+        starttag: '// inject:app',
+        endtag: '// endinject',
+        addRootSlash: false
+    };
+
+    return gulp.src('source/**/main.scss')
+        .pipe(wiredep())
+        .pipe(inject(injectAppFiles, injectAppOptions))
         .pipe(sass())
-        .pipe(concat('style.css'))
-        .pipe(gulp.dest('public/'));
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('html', ['styles'], function(){
+    var injectFiles = gulp.src(['dist/**/main.css']);
+
+    var injectOptions = {
+        addRootSlash: false,
+        ignorePath: ['source', 'dist']
+    };
+
+    return gulp.src('source/index.html')
+        .pipe(inject(injectFiles, injectOptions))
+        .pipe(gulp.dest('dist'));
 });
