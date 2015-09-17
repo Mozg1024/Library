@@ -1,0 +1,16 @@
+{
+  "name": "library",
+  "version": "0.0.1",
+  "description": "Epam library",
+  "main": "app.js",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^1.0.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-util": "^3.0.6",
+    "jshint-stylish": "^2.0.1"
+  }
+}

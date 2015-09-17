@@ -1,0 +1,19 @@
+{
+  "name": "Library",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Mozg1024/Library",
+  "description": "Epam Library",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.4.6"
+  }
+}
