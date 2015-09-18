@@ -5,13 +5,14 @@ var gulp = require('gulp'),
     inject = require('gulp-inject'),
     concat = require('gulp-concat'),
     filter = require('gulp-filter'),
+	connect = require('gulp-connect'),
     open = require('gulp-open'),
     bower = require('main-bower-files'),
     wiredep = require('wiredep').stream,
     del = require('del');
 
 // define the default task and add the watch task to it
-gulp.task('default', ['html', 'watch']);
+gulp.task('default', ['connect', 'html', 'watch']);
 
 // configure the jshint task
 gulp.task('jshint', function () {
@@ -78,7 +79,19 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest('dist/Content/fonts'));
 });
 
-gulp.task('html', ['libs', 'styles', 'images', 'js', 'fonts'], function () {
+gulp.task('templates', function () {
+	return gulp.src('source/**/*.html')
+	.pipe(gulp.dest('dist'));
+});
+
+gulp.task('connect', function () {
+	connect.server({
+		root: 'dist/',
+		port: 8888
+	});
+});
+
+gulp.task('html', ['libs', 'styles', 'images', 'js', 'fonts', 'templates'], function () {
     var injectFiles = gulp.src(['dist/**/main.css', 'dist/js/libs.js', 'dist/js/**/*.js']);
 
     var injectOptions = {
@@ -89,5 +102,5 @@ gulp.task('html', ['libs', 'styles', 'images', 'js', 'fonts'], function () {
     return gulp.src('source/index.html')
         .pipe(inject(injectFiles, injectOptions))
         .pipe(gulp.dest('dist'))
-        .pipe(open());
+        .pipe(open({uri:'http://localhost:8888'}));
 });

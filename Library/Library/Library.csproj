@@ -59,10 +59,8 @@
   <ItemGroup>
     <Content Include="gulpfile.js" />
     <Content Include="source\Content\styles\main.scss" />
-    <Content Include="source\Content\styles\me.scss" />
     <Content Include="bower.json" />
     <Content Include="package.json" />
-    <None Include="source\Content\styles\new\new.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -73,7 +71,12 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="source\Content\images\icons\favicon.ico" />
+    <Content Include="source\Content\styles\styles.css" />
     <Content Include="source\index.html" />
+    <Content Include="source\Pages\aaaa.html" />
+    <Content Include="source\Pages\catalog\catalog.html" />
+    <Content Include="source\Pages\faq\faq.html" />
+    <Content Include="source\Pages\profile\profile.html" />
     <Content Include="source\Scripts\app.js" />
     <Content Include="source\Scripts\libs\libs.js" />
     <Content Include="source\Scripts\routes.js" />
@@ -82,7 +85,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="source\Content\styles\new\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
