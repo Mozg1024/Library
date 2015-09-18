@@ -4,3 +4,9 @@ D:\SVN\Lib\trunk\Library\Library\bin\Library.pdb
 D:\SVN\Lib\trunk\Library\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
 D:\SVN\Lib\trunk\Library\Library\obj\Debug\Library.dll
 D:\SVN\Lib\trunk\Library\Library\obj\Debug\Library.pdb
+D:\library\trunk\Library\Library\Library\bin\Library.dll.config
+D:\library\trunk\Library\Library\Library\bin\Library.dll
+D:\library\trunk\Library\Library\Library\bin\Library.pdb
+D:\library\trunk\Library\Library\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+D:\library\trunk\Library\Library\Library\obj\Debug\Library.dll
+D:\library\trunk\Library\Library\Library\obj\Debug\Library.pdb

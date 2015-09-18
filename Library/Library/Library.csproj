@@ -76,6 +76,7 @@
     <Content Include="source\index.html" />
     <Content Include="source\Scripts\app.js" />
     <Content Include="source\Scripts\libs\libs.js" />
+    <Content Include="source\Scripts\routes.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
