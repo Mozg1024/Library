@@ -5,11 +5,13 @@ var gulp = require('gulp'),
     inject = require('gulp-inject'),
     concat = require('gulp-concat'),
     filter = require('gulp-filter'),
+    open = require('gulp-open'),
     bower = require('main-bower-files'),
-    wiredep = require('wiredep').stream;
+    wiredep = require('wiredep').stream,
+    del = require('del');
 
 // define the default task and add the watch task to it
-gulp.task('default', ['watch', 'html']);
+gulp.task('default', ['html']);
 
 // configure the jshint task
 gulp.task('jshint', function () {
@@ -23,8 +25,29 @@ gulp.task('watch', function () {
     gulp.watch('source/Scripts/**/*.js', ['jshint']);
 });
 
-gulp.task('styles', function(){
-    var injectAppFiles = gulp.src('source/**/*.scss', {read: false});
+gulp.task('js', function () {
+    return gulp.src('source/Scripts/**/*.js')
+        //.pipe(concat('main.js'))
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('clean', function (cb) {
+    del(['dist'], cb);
+});
+
+gulp.task('libs', function () {
+    return gulp.src(bower({
+            includeDev: true
+        }))
+        .pipe(filter('**/*.js'))
+        .pipe(concat('libs.js'))
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('styles', function () {
+    var injectAppFiles = gulp.src(['source/**/libs/*scss', 'source/**/*.scss'], {
+        read: false
+    });
 
     function transformFilepath(filepath) {
         return '@import "' + filepath + '";';
@@ -41,11 +64,17 @@ gulp.task('styles', function(){
         .pipe(wiredep())
         .pipe(inject(injectAppFiles, injectAppOptions))
         .pipe(sass())
+        .pipe(csso())
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('html', ['styles'], function(){
-    var injectFiles = gulp.src(['dist/**/main.css']);
+gulp.task('images', function () {
+    return gulp.src('source/Content/images/**/*')
+        .pipe(gulp.dest('dist/Content/images'));
+});
+
+gulp.task('html', ['libs','styles', 'images', 'js'], function () {
+    var injectFiles = gulp.src(['dist/**/main.css', 'dist/libs.js','dist/**/*.js']);
 
     var injectOptions = {
         addRootSlash: false,
@@ -54,5 +83,6 @@ gulp.task('html', ['styles'], function(){
 
     return gulp.src('source/index.html')
         .pipe(inject(injectFiles, injectOptions))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
+        .pipe(open());
 });
