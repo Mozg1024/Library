@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     del = require('del');
 
 // define the default task and add the watch task to it
-gulp.task('default', ['html']);
+gulp.task('default', ['html', 'watch']);
 
 // configure the jshint task
 gulp.task('jshint', function () {
@@ -28,7 +28,7 @@ gulp.task('watch', function () {
 gulp.task('js', function () {
     return gulp.src('source/Scripts/**/*.js')
         //.pipe(concat('main.js'))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('clean', function (cb) {
@@ -41,7 +41,7 @@ gulp.task('libs', function () {
         }))
         .pipe(filter('**/*.js'))
         .pipe(concat('libs.js'))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('styles', function () {
@@ -73,8 +73,13 @@ gulp.task('images', function () {
         .pipe(gulp.dest('dist/Content/images'));
 });
 
-gulp.task('html', ['libs','styles', 'images', 'js'], function () {
-    var injectFiles = gulp.src(['dist/**/main.css', 'dist/libs.js','dist/**/*.js']);
+gulp.task('fonts', function () {
+    return gulp.src('source/**/*.{ttf,woff,eof,svg}')
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('html', ['libs', 'styles', 'images', 'js', 'fonts'], function () {
+    var injectFiles = gulp.src(['dist/**/main.css', 'dist/js/libs.js', 'dist/js/**/*.js']);
 
     var injectOptions = {
         addRootSlash: false,
