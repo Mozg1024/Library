@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    browserSync = require('browser-sync'),
+    browserSync = require('browser-sync').create(),
     reload = browserSync.reload,
     jshint = require('gulp-jshint'),
     sass = require('gulp-sass'),
@@ -14,7 +14,7 @@ var gulp = require('gulp'),
     del = require('del');
 
 // define the default task and add the watch task to it
-gulp.task('default', ['html', 'watch', 'browser-sync']); //'connect', 
+gulp.task('default', ['html', 'watch']); //'connect', 
 
 // configure the jshint task
 gulp.task('jshint', function () {
@@ -37,7 +37,8 @@ gulp.task('watch', function () {
 
 gulp.task('js', function () {
     return gulp.src('source/Scripts/**/*.js')
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('dist/js'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('clean', function (cb) {
@@ -50,7 +51,8 @@ gulp.task('libs', function () {
         }))
         .pipe(filter('**/*.js'))
         .pipe(concat('libs.js'))
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('dist/js'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('styles', function () {
@@ -74,22 +76,26 @@ gulp.task('styles', function () {
         .pipe(inject(injectAppFiles, injectAppOptions))
         .pipe(sass())
         .pipe(csso())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
+        .pipe(browserSync.stream());;
 });
 
 gulp.task('images', function () {
     return gulp.src('source/Content/images/**/*')
-        .pipe(gulp.dest('dist/Content/images'));
+        .pipe(gulp.dest('dist/Content/images'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('fonts', function () {
     return gulp.src('source/Content/styles/fonts/**/*')
-        .pipe(gulp.dest('dist/Content/fonts'));
+        .pipe(gulp.dest('dist/Content/fonts'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('templates', function () {
     return gulp.src('source/**/*.html')
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
+        .pipe(browserSync.stream());
 });
 
 //gulp.task('connect', function () {
@@ -100,14 +106,16 @@ gulp.task('templates', function () {
 //});
 
 gulp.task('browser-sync', function () {
-    browserSync({
+    browserSync.init({
         server: {
-            baseDir: "dist"
+            baseDir: 'dist'
         }
     });
+
+    //browserSync.reload("*.html");
 });
 
-gulp.task('html', ['libs', 'styles', 'images', 'js', 'fonts', 'templates'], function () {
+gulp.task('html', ['libs', 'styles', 'images', 'js', 'fonts', 'templates', 'browser-sync'], function () {
     var injectFiles = gulp.src(['dist/Content/styles/main.css', 'dist/js/libs.js', 'dist/js/**/*.js']);
 
     var injectOptions = {
