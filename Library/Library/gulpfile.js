@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     inject = require('gulp-inject'),
     concat = require('gulp-concat'),
     filter = require('gulp-filter'),
-	connect = require('gulp-connect'),
+    connect = require('gulp-connect'),
     open = require('gulp-open'),
     bower = require('main-bower-files'),
     wiredep = require('wiredep').stream,
@@ -80,15 +80,15 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('templates', function () {
-	return gulp.src('source/**/*.html')
-	.pipe(gulp.dest('dist'));
+    return gulp.src('source/**/*.html')
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('connect', function () {
-	connect.server({
-		root: 'dist/',
-		port: 8888
-	});
+    connect.server({
+        root: 'dist/',
+        port: 8888
+    });
 });
 
 gulp.task('html', ['libs', 'styles', 'images', 'js', 'fonts', 'templates'], function () {
@@ -102,5 +102,5 @@ gulp.task('html', ['libs', 'styles', 'images', 'js', 'fonts', 'templates'], func
     return gulp.src('source/index.html')
         .pipe(inject(injectFiles, injectOptions))
         .pipe(gulp.dest('dist'))
-        .pipe(open({uri:'http://localhost:8888'}));
+        .pipe(open({ uri: 'http://localhost:8888' }));
 });

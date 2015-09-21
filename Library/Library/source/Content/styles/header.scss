@@ -1,2 +1,35 @@
-﻿body {
+﻿.user-profile{
+    color: $white;
+    font-size: 20px;
+    padding: 15px;
+}
+
+.search-container {
+    padding: 15px;
+}
+
+.search-bar {
+    background-color: $dark-gray;
+
+    &:hover {
+        background-color: $gray;
+    }
+
+    &:active {
+        background-color: $white;
+    }
+}
+
+.right-inner-addon {
+    position: relative;
+
+    input {
+        padding-right: 30px;
+    }
+
+    i {
+        position: absolute;
+        right: 12px;
+        padding: 10px 12px;
+    }
 }
