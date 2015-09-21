@@ -1,0 +1,48 @@
+﻿.user-profile{
+    height: 60px;
+    line-height: 60px;
+    padding: 0 15px;
+    letter-spacing: 0.5px;
+    font-size: 15px;
+    color: $white;
+    font-family: 'Oswald Regular',Tahoma,sans-serif;
+    text-decoration: none;
+
+    a {
+        color: $white;
+    }
+}
+
+.search-container {
+    padding: 13px;
+}
+.search-bar {
+    position: absolute;
+    right: 0;
+    width: $SEARCH_BAR_COLLAPSED_WIDTH;
+    background-color: $medium-gray;
+    -moz-transition: all $SEARCH_BAR_TRANSITION linear;
+    -o-transition: all $SEARCH_BAR_TRANSITION linear;
+    -webkit-transition: all $SEARCH_BAR_TRANSITION linear;
+    transition: all $SEARCH_BAR_TRANSITION linear;
+
+    &:focus {
+        background-color: $white;
+        width: $SEARCH_BAR_DEPLOYED_WIDTH;
+    }
+}
+
+.right-inner-addon {
+    position: relative;
+
+    input {
+        padding-right: 30px;
+    }
+
+    i {
+        position: absolute;
+        right: 0;
+        padding: 10px 12px;
+        cursor: pointer;
+    }
+}

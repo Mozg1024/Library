@@ -1,4 +1,6 @@
 var gulp = require('gulp'),
+    browserSync = require('browser-sync'),
+    reload = browserSync.reload,
     jshint = require('gulp-jshint'),
     sass = require('gulp-sass'),
     csso = require('gulp-csso'),
@@ -12,7 +14,7 @@ var gulp = require('gulp'),
     del = require('del');
 
 // define the default task and add the watch task to it
-gulp.task('default', ['connect', 'html', 'watch']);
+gulp.task('default', ['html', 'watch', 'browser-sync']); //'connect', 
 
 // configure the jshint task
 gulp.task('jshint', function () {
@@ -23,12 +25,18 @@ gulp.task('jshint', function () {
 
 // configure which files to watch and what tasks to use on file changes
 gulp.task('watch', function () {
-    gulp.watch('source/Scripts/**/*.js', ['jshint']);
+    //gulp.watch('source/Scripts/**/*.js', ['jshint']);
+
+    gulp.watch('source/**/*.scss', ['styles']);
+    gulp.watch('source/Content/images/**/*', ['images']);
+    gulp.watch('source/Content/styles/fonts/**/*', ['fonts']);
+    gulp.watch('source/**/*.html', ['templates']);
+    gulp.watch('source/Scripts/**/*.js', ['js']);
+
 });
 
 gulp.task('js', function () {
     return gulp.src('source/Scripts/**/*.js')
-        //.pipe(concat('main.js'))
         .pipe(gulp.dest('dist/js'));
 });
 
@@ -46,9 +54,9 @@ gulp.task('libs', function () {
 });
 
 gulp.task('styles', function () {
-    var injectAppFiles = gulp.src(['source/**/libs/*scss', 'source/**/*.scss'], {
-        read: false
-    });
+    var injectAppFiles = gulp.src(['source/**/*.scss', 'source/**/*.css']); //, { //'source/**/libs/*.scss',
+    //    read: false
+    //});
 
     function transformFilepath(filepath) {
         return '@import "' + filepath + '";';
@@ -81,18 +89,26 @@ gulp.task('fonts', function () {
 
 gulp.task('templates', function () {
     return gulp.src('source/**/*.html')
-    .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'));
 });
 
-gulp.task('connect', function () {
-    connect.server({
-        root: 'dist/',
-        port: 8888
+//gulp.task('connect', function () {
+//    connect.server({
+//        root: 'dist/',
+//        port: 8888
+//    });
+//});
+
+gulp.task('browser-sync', function () {
+    browserSync({
+        server: {
+            baseDir: "dist"
+        }
     });
 });
 
 gulp.task('html', ['libs', 'styles', 'images', 'js', 'fonts', 'templates'], function () {
-    var injectFiles = gulp.src(['dist/**/main.css', 'dist/js/libs.js', 'dist/js/**/*.js']);
+    var injectFiles = gulp.src(['dist/Content/styles/main.css', 'dist/js/libs.js', 'dist/js/**/*.js']);
 
     var injectOptions = {
         addRootSlash: false,
@@ -101,6 +117,6 @@ gulp.task('html', ['libs', 'styles', 'images', 'js', 'fonts', 'templates'], func
 
     return gulp.src('source/index.html')
         .pipe(inject(injectFiles, injectOptions))
-        .pipe(gulp.dest('dist'))
-        .pipe(open({ uri: 'http://localhost:8888' }));
+        .pipe(gulp.dest('dist'));
+        //.pipe(open({ uri: 'http://localhost:8888' }));
 });

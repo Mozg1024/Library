@@ -20,13 +20,13 @@
 
 <body>
 
-    <header ng-controller="">
+    <header ng-controller="headerCtrl as vm">
 
         <div class="uui-header dark-gray">
 
             <nav role="navigation">
-                <a href="#" class="brand-logo">
-                    LOGO
+                <a ui-sref="catalog" class="brand-logo">
+                    LOG0
                 </a>
                 <ul class="uui-navigation nav navbar-nav">
                     <li>
@@ -38,14 +38,14 @@
                 </ul>
             </nav>
 
-            <span class="pull-right user-profile">
+            <div class="pull-right user-profile">
                 Welcome, <a ui-sref="profile">{{vm.username}}</a>!
-            </span>
+            </div>
 
             <div class="pull-right search-container">
                 <div class="form-group right-inner-addon">
-                    <input type="text" class="uui-form-element search-bar" placeholder="Enter some words here..." />
-                    <i class="glyphicon glyphicon-search"></i>
+                    <input type="text" class="uui-form-element search-bar" />
+                    <i class="fa fa-search"></i>
                 </div>
             </div>
 

@@ -63,9 +63,15 @@
     <Content Include="dist\js\app.js" />
     <Content Include="dist\js\libs.js" />
     <Content Include="gulpfile.js" />
-    <None Include="source\Content\styles\header.scss" />
-    <None Include="source\Content\styles\colors.scss" />
+    <Content Include="source\Content\styles\fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="source\Content\styles\fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="source\Content\styles\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="source\Content\styles\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="source\Content\styles\fonts\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="source\Content\styles\header\header.scss" />
+    <None Include="source\Content\styles\_constants\colors.scss" />
     <Content Include="source\Content\styles\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="source\Content\styles\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="source\Content\styles\fonts\font-oswald\oswald-bold.svg" />
     <Content Include="source\Content\styles\fonts\font-oswald\oswald-light.svg" />
     <Content Include="source\Content\styles\fonts\font-oswald\oswald-regular.svg" />
@@ -77,8 +83,8 @@
     <Content Include="source\Content\styles\main.scss" />
     <Content Include="bower.json" />
     <Content Include="package.json" />
-    <Content Include="source\Content\styles\styles.scss" />
-    <Content Include="source\Content\styles\libs\uui-all.scss" />
+    <None Include="source\Content\styles\_constants\sizes.scss" />
+    <Content Include="source\Content\styles\common.scss" />
     <Content Include="source\Content\styles\fonts\bootstrap\glyphicons-halflings-regular.eot" />
     <Content Include="source\Content\styles\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
     <Content Include="source\Content\styles\fonts\bootstrap\glyphicons-halflings-regular.woff" />
@@ -115,6 +121,7 @@
     <Content Include="source\Content\styles\fonts\font-sourcesanspro\sourcesanspro-semibold.otf" />
     <Content Include="source\Content\styles\fonts\font-sourcesanspro\sourcesanspro-semibold.ttf" />
     <Content Include="source\Content\styles\fonts\font-sourcesanspro\sourcesanspro-semibold.woff" />
+    <Content Include="source\Content\styles\_libs\uui-all.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -125,6 +132,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="source\Content\images\icons\favicon.ico" />
+    <None Include="source\Content\styles\_constants\timings.scss" />
     <Content Include="source\index.html" />
     <Content Include="source\Pages\catalog\catalog.html" />
     <Content Include="source\Pages\faq\faq.html" />
@@ -141,7 +149,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="source\Content\styles\new\" />
+    <Folder Include="source\Content\images\logo\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

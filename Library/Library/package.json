@@ -4,6 +4,7 @@
   "description": "Epam library",
   "main": "app.js",
   "devDependencies": {
+    "browser-sync": "^2.9.4",
     "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
