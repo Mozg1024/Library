@@ -26,9 +26,9 @@
         <div class="uui-header dark-gray">
 
             <nav role="navigation">
-                <a ui-sref="catalog" class="brand-logo">
-                    LOG7712
-                </a>
+                <div class="epam-logo">
+                    <img ng-src="img/logo/Logo_Epam_Color.svg" alt="EPAM" />
+                </div>
                 <ul class="uui-navigation nav navbar-nav">
                     <li>
                         <a ui-sref="catalog">Catalog</a>
@@ -54,7 +54,8 @@
 
     </header>
 
-    <div class="">
+    <div>
+
         <aside class="item-list-container">
             <div class="panel">
                 <div class="book-item-container">
@@ -115,8 +116,10 @@
                     </footer>
                 </div>
             </div>
-        </aside><!--
-        --><div class="main-container" ui-view></div>
+        </aside>
+
+        <div class="main-container" ui-view></div>
+
     </div>
 
     <!--Scripts-->
