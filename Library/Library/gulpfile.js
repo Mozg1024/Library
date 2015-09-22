@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     reload = browserSync.reload,
+    bower = require('gulp-bower'),
     jshint = require('gulp-jshint'),
     sass = require('gulp-sass'),
     csso = require('gulp-csso'),
@@ -14,7 +15,7 @@ var gulp = require('gulp'),
     del = require('del');
 
 // define the default task and add the watch task to it
-gulp.task('default', ['html', 'watch']); //'connect', 
+gulp.task('default', ['html', 'watch', 'browser-sync']);
 
 // configure the jshint task
 gulp.task('jshint', function () {
@@ -27,11 +28,11 @@ gulp.task('jshint', function () {
 gulp.task('watch', function () {
     //gulp.watch('source/Scripts/**/*.js', ['jshint']);
 
-    gulp.watch('source/**/*.scss', ['styles']);
-    gulp.watch('source/Content/images/**/*', ['images']);
-    gulp.watch('source/Content/styles/fonts/**/*', ['fonts']);
-    gulp.watch('source/**/*.html', ['templates']);
-    gulp.watch('source/Scripts/**/*.js', ['js']);
+    gulp.watch('source/**/*.scss', ['html']);
+    gulp.watch('source/Content/images/**/*', ['html']);
+    gulp.watch('source/Content/styles/fonts/**/*', ['html']);
+    gulp.watch('source/**/*.html', ['html']);
+    gulp.watch('source/Scripts/**/*.js', ['html']);
 
 });
 
@@ -51,12 +52,11 @@ gulp.task('libs', function () {
         }))
         .pipe(filter('**/*.js'))
         .pipe(concat('libs.js'))
-        .pipe(gulp.dest('dist/js'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('styles', function () {
-    var injectAppFiles = gulp.src(['source/**/*.scss', 'source/**/*.css']); //, { //'source/**/libs/*.scss',
+gulp.task('scss', function () {
+    var injectAppFiles = gulp.src('source/**/*.scss'); //, { //'source/**/libs/*.scss',
     //    read: false
     //});
 
@@ -76,47 +76,46 @@ gulp.task('styles', function () {
         .pipe(inject(injectAppFiles, injectAppOptions))
         .pipe(sass())
         .pipe(csso())
-        .pipe(gulp.dest('dist'))
-        .pipe(browserSync.stream());;
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('css', function () {
+    return gulp.src('source/**/*.css')
+        .pipe(gulp.dest('dist/Content/css'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('images', function () {
     return gulp.src('source/Content/images/**/*')
-        .pipe(gulp.dest('dist/Content/images'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('dist/Content/images'));
 });
 
 gulp.task('fonts', function () {
-    return gulp.src('source/Content/styles/fonts/**/*')
-        .pipe(gulp.dest('dist/Content/fonts'))
-        .pipe(browserSync.stream());
+    return gulp.src('source/Content/fonts/**/*')
+        .pipe(gulp.dest('dist/Content/fonts'));
 });
 
 gulp.task('templates', function () {
     return gulp.src('source/**/*.html')
-        .pipe(gulp.dest('dist'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('dist'));
 });
 
-//gulp.task('connect', function () {
-//    connect.server({
-//        root: 'dist/',
-//        port: 8888
-//    });
-//});
+gulp.task('bower', function () {
+    return bower()
+        .pipe(gulp.dest('dist/lib/'));
+});
 
 gulp.task('browser-sync', function () {
     browserSync.init({
         server: {
-            baseDir: 'dist'
+            baseDir: 'dist',
+            directory: true
         }
     });
-
-    //browserSync.reload("*.html");
 });
 
-gulp.task('html', ['libs', 'styles', 'images', 'js', 'fonts', 'templates', 'browser-sync'], function () {
-    var injectFiles = gulp.src(['dist/Content/styles/main.css', 'dist/js/libs.js', 'dist/js/**/*.js']);
+gulp.task('html', ['libs', 'scss', 'css', 'images', 'js', 'fonts', 'templates'], function () {
+    var injectFiles = gulp.src(['dist/**/*.css', 'dist/js/libs.js', 'dist/**/*.js']);
 
     var injectOptions = {
         addRootSlash: false,
@@ -125,6 +124,6 @@ gulp.task('html', ['libs', 'styles', 'images', 'js', 'fonts', 'templates', 'brow
 
     return gulp.src('source/index.html')
         .pipe(inject(injectFiles, injectOptions))
-        .pipe(gulp.dest('dist'));
-        //.pipe(open({ uri: 'http://localhost:8888' }));
+        .pipe(gulp.dest('dist'))
+        .pipe(reload({ stream: true }));;
 });
