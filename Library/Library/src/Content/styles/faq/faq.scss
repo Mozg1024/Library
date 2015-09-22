@@ -1,4 +1,6 @@
 ﻿.leave-comment-container{
+    width: 500px;
+    margin: 30px 0;
     textarea{
         resize:none;
     }
@@ -9,11 +11,12 @@
 .comments-list{
     list-style: none;
 }
-.commet-container{
-    width: 450px;
+.comment-container{
+    width: 500px;
     padding: 5px;
     border: 1px solid black;
     margin: 10px 0;
+    font-size: 12px;
     footer{
         font-size: 10px;
         min-height: 20px;

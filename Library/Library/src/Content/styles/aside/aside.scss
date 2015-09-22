@@ -19,7 +19,7 @@
         cursor: pointer;
         box-shadow: 0 3px 20px rgba(0,0,0,.4),
                     inset 0 2px 0 rgba(255,255,255,.4),
-                    0 2px 0 rgba(0,0,0,.1), 
+                    0 2px 0 rgba(0,0,0,.1),
                     inset 0 0 20px rgba(0,0,0,.1);
     }
 }
@@ -36,14 +36,14 @@
 }
 .footer-title{
     color: white;
-    line-height: 30px;
-    vertical-align: middle;
+    font-size: 12px;
 }
 .footer-count{
     font-size: 12px;
-    line-height: 30px;
-    vertical-align: middle;
 }
 .question-item-body {
     padding: 5px;
+}
+.book-image{
+    max-width: 100%;
 }
