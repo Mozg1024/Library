@@ -58,54 +58,47 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gulpfile.js" />
-    <None Include="source\Content\styles\header\header.scss" />
-    <None Include="source\Content\styles\_constants\colors.scss" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-bold.svg" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-light.svg" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-regular.svg" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-bold.svg" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-it.svg" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-light.svg" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-regular.svg" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.svg" />
-    <Content Include="source\Content\styles\main.scss" />
     <Content Include="bower.json" />
     <Content Include="package.json" />
-    <None Include="source\Content\styles\_constants\sizes.scss" />
-    <Content Include="source\Content\styles\common.scss" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-bold.eot" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-bold.otf" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-bold.ttf" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-bold.woff" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-light.eot" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-light.otf" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-light.ttf" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-light.woff" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-regular.eot" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-regular.otf" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-regular.ttf" />
-    <Content Include="source\Content\fonts\font-oswald\oswald-regular.woff" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-bold.eot" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-bold.otf" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-bold.ttf" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-bold.woff" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-it.eot" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-it.otf" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-it.ttf" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-it.woff" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-light.eot" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-light.otf" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-light.ttf" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-light.woff" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-regular.eot" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-regular.otf" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-regular.ttf" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-regular.woff" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.eot" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.otf" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.ttf" />
-    <Content Include="source\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.woff" />
-    <Content Include="source\Content\styles\_libs\uui-all.scss" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-bold.eot" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-bold.otf" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-bold.ttf" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-bold.woff" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-light.eot" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-light.otf" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-light.ttf" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-light.woff" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-regular.eot" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-regular.otf" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-regular.ttf" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-regular.woff" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-bold.eot" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-bold.otf" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-bold.ttf" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-bold.woff" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-it.eot" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-it.otf" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-it.ttf" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-it.woff" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-light.eot" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-light.otf" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-light.ttf" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-light.woff" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-regular.eot" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-regular.otf" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-regular.ttf" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-regular.woff" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.eot" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.otf" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.ttf" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.woff" />
+    <Content Include="src\Content\styles\common.scss" />
+    <Content Include="src\Content\styles\constants\colors.scss" />
+    <Content Include="src\Content\styles\constants\sizes.scss" />
+    <Content Include="src\Content\styles\constants\timings.scss" />
+    <Content Include="src\Content\styles\header\header.scss" />
+    <Content Include="src\Content\styles\libs\uui-all.scss" />
+    <Content Include="src\Content\styles\main.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -115,26 +108,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="source\Content\images\icons\favicon.ico" />
-    <None Include="source\Content\styles\_constants\timings.scss" />
-    <Content Include="source\index.html" />
-    <Content Include="source\Pages\catalog\catalog.html" />
-    <Content Include="source\Pages\faq\faq.html" />
-    <Content Include="source\Pages\profile\profile.html" />
-    <Content Include="source\Scripts\app.js" />
-    <Content Include="source\Scripts\catalog\catalog-ctrl.js" />
-    <Content Include="source\Scripts\faq\faq-ctrl.js" />
-    <Content Include="source\Scripts\header\header-ctrl.js" />
-    <Content Include="source\Scripts\profile\profile.js" />
-    <Content Include="source\Scripts\routes.js" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-bold.svg" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-light.svg" />
+    <Content Include="src\Content\fonts\font-oswald\oswald-regular.svg" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-bold.svg" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-it.svg" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-light.svg" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-regular.svg" />
+    <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.svg" />
+    <Content Include="src\Content\images\icons\favicon.ico" />
+    <Content Include="src\Content\images\logo\ic_logo_UUi.svg" />
+    <Content Include="src\Content\images\logo\Logo_Epam_Color.svg" />
+    <Content Include="src\Content\images\logo\Logo_Epam_Gray.svg" />
+    <Content Include="src\Content\images\logo\Logo_Epam_White.svg" />
+    <Content Include="src\index.html" />
+    <Content Include="src\Pages\catalog\catalog.html" />
+    <Content Include="src\Pages\faq\faq.html" />
+    <Content Include="src\Pages\profile\profile.html" />
+    <Content Include="src\Scripts\app.js" />
+    <Content Include="src\Scripts\catalog\catalog-ctrl.js" />
+    <Content Include="src\Scripts\faq\faq-ctrl.js" />
+    <Content Include="src\Scripts\header\header-ctrl.js" />
+    <Content Include="src\Scripts\main.js" />
+    <Content Include="src\Scripts\profile\profile.js" />
+    <Content Include="src\Scripts\routes.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="source\Content\images\logo\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
