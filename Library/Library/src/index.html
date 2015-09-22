@@ -53,23 +53,76 @@
         </div>
 
     </header>
-    
-    <div class="container-fluid">
 
-        <div class="row">
+    <div class="">
+        <aside class="item-list-container">
+            <div class="panel">
+                <div class="book-item-container">
+                    <div class="book-item-body">
 
-            <div class="col-xs-2">
-                <aside class="item-list-container">
-                    <i class="glyphicon glyphicon-hd-video"></i>
-                </aside>
+                    </div>
+                    <footer class="book-item-footer text-center">
+                        <span class="footer-title">Книг доступно: </span>
+                        <span class="uui-badge blue footer-count">
+                            <i class="white">12</i>
+                        </span>
+                    </footer>
+                </div>
             </div>
+            <div class="panel">
+                <div class="book-item-container">
+                    <div class="book-item-body">
 
-            <div class="col-xs-10">
-                <div ui-view></div>
+                    </div>
+                    <footer class="book-item-footer text-center">
+                        <span class="footer-title">Дней до возврата: </span>
+                        <span class="uui-badge blue footer-count">
+                            <i class="white">2</i>
+                        </span>
+                    </footer>
+                </div>
             </div>
-
-        </div>
-
+            <div class="panel">
+                <div class="book-item-container">
+                    <div class="question-item-body text-center">
+                        <h4>How to do anything?</h4>
+                    </div>
+                    <footer class="book-item-footer text-center">
+                        <span class="footer-title">Комментариев: </span>
+                        <span class="uui-badge blue footer-count">
+                            <i class="white">10</i>
+                        </span>
+                    </footer>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="book-item-container">
+                    <div class="question-item-body text-center">
+                        <h4>Как заказать книгу?</h4>
+                    </div>
+                    <footer class="book-item-footer text-center">
+                        <span class="footer-title">Комментариев: </span>
+                        <span class="uui-badge blue footer-count">
+                            <i class="white">3</i>
+                        </span>
+                    </footer>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="book-item-container">
+                    <div class="question-item-body text-center">
+                        <h4>Как угнать самокат если ты никогда не использовал газовый балон?</h4>
+                    </div>
+                    <footer class="book-item-footer text-center">
+                        <span class="footer-title">Комментариев: </span>
+                        <span class="uui-badge blue footer-count">
+                            <i class="white">3</i>
+                        </span>
+                    </footer>
+                </div>
+            </div>
+        </aside><!--
+        --><div class="main-container" ui-view></div>
     </div>
 
     <!--Scripts-->

@@ -1,0 +1,25 @@
+﻿.leave-comment-container{
+    textarea{
+        resize:none;
+    }
+}
+.leave-comment-btn{
+    margin-top: 20px;
+}
+.comments-list{
+    list-style: none;
+}
+.commet-container{
+    width: 450px;
+    padding: 5px;
+    border: 1px solid black;
+    margin: 10px 0;
+    footer{
+        font-size: 10px;
+        min-height: 20px;
+        span{
+            line-height: 20px;
+            vertical-align: middle;
+        }
+    }
+}

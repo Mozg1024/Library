@@ -1,0 +1,49 @@
+﻿.item-list-container {
+    border-right: 1px solid black;
+    display: inline-block;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    overflow-y: scroll;
+}
+.book-item-container {
+    width: 200px;
+    margin: 0 auto;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 3px 20px rgba(0,0,0,.4),
+                    inset 0 2px 0 rgba(255,255,255,.4),
+                    0 2px 0 rgba(0,0,0,.1), 
+                    inset 0 0 20px rgba(0,0,0,.1);
+    }
+}
+.book-item-body {
+    padding: 20px;
+    height: 260px;
+    background: url('../images/rikhter.jpg') no-repeat;
+    background-size: cover;
+}
+.book-item-footer{
+    background:#464547;
+    min-height: 30px;
+    padding: 5px;
+}
+.footer-title{
+    color: white;
+    line-height: 30px;
+    vertical-align: middle;
+}
+.footer-count{
+    font-size: 12px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+.question-item-body {
+    padding: 5px;
+}
