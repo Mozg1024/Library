@@ -92,6 +92,10 @@
     <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.otf" />
     <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.ttf" />
     <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.woff" />
+    <Content Include="src\Content\images\books\book_1.png" />
+    <Content Include="src\Content\images\books\book_2.png" />
+    <Content Include="src\Content\images\books\book_3.png" />
+    <Content Include="src\Content\images\books\book_4.png" />
     <Content Include="src\Content\styles\common.scss" />
     <Content Include="src\Content\styles\constants\colors.scss" />
     <Content Include="src\Content\styles\constants\sizes.scss" />
@@ -101,6 +105,7 @@
     <Content Include="src\Content\styles\main.scss" />
     <Content Include="src\Content\styles\faq\faq.scss" />
     <Content Include="src\Content\styles\aside\aside.scss" />
+    <Content Include="src\Content\styles\catalog\catalog.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -131,6 +136,7 @@
     <Content Include="src\Scripts\catalog\catalog-ctrl.js" />
     <Content Include="src\Scripts\faq\faq-ctrl.js" />
     <Content Include="src\Scripts\header\header-ctrl.js" />
+    <Content Include="src\Scripts\libs\uui\uui-rating.min.js" />
     <Content Include="src\Scripts\main.js" />
     <Content Include="src\Scripts\profile\profile.js" />
     <Content Include="src\Scripts\routes.js" />
