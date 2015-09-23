@@ -92,6 +92,8 @@
     <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.otf" />
     <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.ttf" />
     <Content Include="src\Content\fonts\font-sourcesanspro\sourcesanspro-semibold.woff" />
+    <Content Include="src\Content\images\books\htmlcss.jpg" />
+    <Content Include="src\Content\images\books\rikhter.jpg" />
     <Content Include="src\Content\styles\common.scss" />
     <Content Include="src\Content\styles\constants\colors.scss" />
     <Content Include="src\Content\styles\constants\sizes.scss" />
@@ -151,7 +153,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58571</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
