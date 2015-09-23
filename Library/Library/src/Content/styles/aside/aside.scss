@@ -9,33 +9,35 @@
 }
 .item-container {
     width: 200px;
+    margin: 0 0 30px 0;
     margin: 0 auto;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 20px rgba(0,0,0,0.2);
     -moz-transition: all $ITEM_CARD_TRANSITION;
     -o-transition: all $ITEM_CARD_TRANSITION;
     -webkit-transition: all $ITEM_CARD_TRANSITION;
     transition: all $ITEM_CARD_TRANSITION;
     &:hover {
         cursor: pointer;
-        box-shadow: 0 3px 20px rgba(0,0,0,0.4);
+        box-shadow: 0px 3px 20px rgba(0,0,0,1);
     }
 }
-
 .book-item-body {
     padding: 20px;
     height: 260px;
 }
-.item-footer{
+.item-footer {
     background: $dark-gray;
     height: 30px;
     padding: 5px;
 }
 
-.footer-title{
+.footer-title {
     color: $white;
     font-size: 14px;
 }
 
-.footer-count{
+.footer-count {
     font-size: 12px;
 }
 
@@ -43,6 +45,6 @@
     padding: 5px;
 }
 
-.book-image{
+.book-image {
     max-width: 100%;
 }

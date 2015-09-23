@@ -11,6 +11,7 @@
     a {
         color: $white;
     }
+
 }
 
 .search-container {
@@ -25,7 +26,6 @@
     -o-transition: all $SEARCH_BAR_TRANSITION linear;
     -webkit-transition: all $SEARCH_BAR_TRANSITION linear;
     transition: all $SEARCH_BAR_TRANSITION linear;
-
     &:focus {
         background-color: $white;
         width: $SEARCH_BAR_DEPLOYED_WIDTH;
