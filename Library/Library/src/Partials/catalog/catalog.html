@@ -1,0 +1,30 @@
+﻿<div class="book-details clearfix">
+
+    <div class="big-book-card pull-left">
+        <img ng-src={{vm.card}} alt="" />
+    </div>
+
+    <h1>{{vm.title}}</h1>
+    <h2>{{vm.author}}</h2>
+    <h3>{{vm.year}}</h3>
+
+    <div class="badges">
+        <span class="uui-badge blue">
+            <i class="white">{{vm.pages}} pages</i>
+        </span>
+
+        <span class="uui-badge blue">
+            <i class="white">{{vm.available}}/{{vm.count}} available</i>
+        </span>
+    </div>
+
+    <div class="uui-rating"></div>
+
+</div>
+
+<div class="book-description">{{vm.description}}</div>
+
+<script>
+    $('.uui-rating').uui_rating('init', { count: 5, animate_hover: false });
+    $('.uui-rating').uui_rating('set_value', 2);
+</script>

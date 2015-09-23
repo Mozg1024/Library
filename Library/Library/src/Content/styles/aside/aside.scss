@@ -1,13 +1,13 @@
 ﻿.item-list-container {
     border-right: 1px solid black;
-    display: inline-block;
     position: fixed;
     top: 70px;
     left: 0;
     bottom: 0;
     width: 280px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
+
 .book-item-container {
     width: 200px;
     margin: 0 auto;
@@ -26,27 +26,33 @@
         padding: 15px;
     }
 }
+
 .book-item-body {
     padding: 20px;
     height: 260px;
-    background: url('../images/rikhter.jpg') no-repeat;
+    background: url('../img/rikhter.jpg') no-repeat;
     background-size: cover;
 }
+
 .book-item-footer{
     background:#464547;
     min-height: 30px;
     padding: 5px;
 }
+
 .footer-title{
     color: white;
     font-size: 14px;
 }
+
 .footer-count{
     font-size: 12px;
 }
+
 .question-item-body {
     padding: 5px;
 }
+
 .book-image{
     max-width: 100%;
 }

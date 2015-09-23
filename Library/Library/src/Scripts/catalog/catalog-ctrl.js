@@ -3,8 +3,11 @@
 
     angular.module('app')
         .controller('catalogCtrl', catalogCtrl);
+
     function catalogCtrl() {
         var vm = this;
+
+        vm.card = 'img/books/book_1.png';
 
         vm.title = 'Book 1';
         vm.author = 'Jeffrey Richter';

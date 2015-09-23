@@ -96,6 +96,8 @@
     <Content Include="src\Content\images\books\book_2.png" />
     <Content Include="src\Content\images\books\book_3.png" />
     <Content Include="src\Content\images\books\book_4.png" />
+    <Content Include="src\Content\images\books\htmlcss.jpg" />
+    <Content Include="src\Content\images\books\rikhter.jpg" />
     <Content Include="src\Content\styles\common.scss" />
     <Content Include="src\Content\styles\constants\colors.scss" />
     <Content Include="src\Content\styles\constants\sizes.scss" />
@@ -106,6 +108,7 @@
     <Content Include="src\Content\styles\faq\faq.scss" />
     <Content Include="src\Content\styles\aside\aside.scss" />
     <Content Include="src\Content\styles\catalog\catalog.scss" />
+    <Content Include="src\Content\styles\constants\common-styles.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -129,9 +132,9 @@
     <Content Include="src\Content\images\logo\Logo_Epam_Gray.svg" />
     <Content Include="src\Content\images\logo\Logo_Epam_White.svg" />
     <Content Include="src\index.html" />
-    <Content Include="src\Pages\catalog\catalog.html" />
-    <Content Include="src\Pages\faq\faq.html" />
-    <Content Include="src\Pages\profile\profile.html" />
+    <Content Include="src\Partials\catalog\catalog.html" />
+    <Content Include="src\Partials\faq\faq.html" />
+    <Content Include="src\Partials\profile\profile.html" />
     <Content Include="src\Scripts\app.js" />
     <Content Include="src\Scripts\catalog\catalog-ctrl.js" />
     <Content Include="src\Scripts\faq\faq-ctrl.js" />

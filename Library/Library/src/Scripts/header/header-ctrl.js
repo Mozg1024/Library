@@ -6,6 +6,7 @@
 
     function headerCtrl() {
         var vm = this;
+
         vm.username = 'guest';
     }
 
