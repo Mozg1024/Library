@@ -10,17 +10,17 @@
                 url: '/',
                 controller: 'catalogCtrl',
                 controllerAs: 'vm',
-                templateUrl: 'Pages/catalog/catalog.html'
+                templateUrl: 'Partials/catalog/catalog.html'
             })
             .state('profile', {
                 url: '/profile',
-                templateUrl: 'Pages/profile/profile.html',
+                templateUrl: 'Partials/profile/profile.html',
                 controller: 'profileCtrl',
                 controllerAs: 'vm'
             })
             .state('faq', {
                 url: '/faq',
-                templateUrl: 'Pages/faq/faq.html',
+                templateUrl: 'Partials/faq/faq.html',
                 controller: 'faqCtrl',
                 controllerAs: 'vm'
             })

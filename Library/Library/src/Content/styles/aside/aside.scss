@@ -1,12 +1,11 @@
 ﻿.item-list-container {
     border-right: 1px solid black;
-    display: inline-block;
     position: fixed;
     top: 70px;
     left: 0;
     bottom: 0;
     width: 280px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .item-container {
     width: 200px;
@@ -20,6 +19,7 @@
         box-shadow: 0 3px 20px rgba(0,0,0,0.4);
     }
 }
+
 .book-item-body {
     padding: 20px;
     height: 260px;
@@ -29,16 +29,20 @@
     height: 30px;
     padding: 5px;
 }
+
 .footer-title{
     color: $white;
     font-size: 14px;
 }
+
 .footer-count{
     font-size: 12px;
 }
+
 .question-item-body {
     padding: 5px;
 }
+
 .book-image{
     max-width: 100%;
 }

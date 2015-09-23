@@ -7,6 +7,7 @@
 //= ../../bower_components/angular/angular.js
 //= ../../bower_components/ui-router/release/angular-ui-router.js
 
+//= libs/uui/uui-rating.min.js
 
 /*
     Custom

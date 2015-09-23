@@ -1,0 +1,23 @@
+﻿.big-book-card {
+    width: 300px;
+    height: auto;
+    margin: 0 15px 15px 0;
+    box-shadow: $BOOKS_SHADOW;
+
+    img {
+        width: 100%;
+    }
+}
+
+.book-details {
+    .badges {
+        margin: 15px 0;
+        span + span {
+            margin-left: 10px;
+        }
+    }
+}
+
+.book-description {
+    text-indent: $BOOK_DESCRIPTION_INDENT;
+}
