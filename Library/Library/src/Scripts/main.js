@@ -8,6 +8,7 @@
 //= ../../bower_components/ui-router/release/angular-ui-router.js
 
 //= libs/uui/uui-rating.min.js
+//= libs/uui/bootstrap-switch.min.js
 
 /*
     Custom

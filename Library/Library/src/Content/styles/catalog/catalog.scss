@@ -1,8 +1,8 @@
 ﻿.big-book-card {
-    width: 300px;
+    width: $BIG_BOOK_CARD_WIDTH;
     height: auto;
     margin: 0 15px 15px 0;
-    box-shadow: $BOOKS_SHADOW;
+    border: $BORDER_UNFOCUSED;
 
     img {
         width: 100%;

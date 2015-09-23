@@ -1,11 +1,11 @@
-﻿.user-profile{
+﻿.user-profile-title {
     height: 60px;
     line-height: 60px;
     padding: 0 15px;
     letter-spacing: 0.5px;
     font-size: 15px;
     color: $white;
-    font-family: 'Oswald Regular',Tahoma,sans-serif;
+    font-family: 'Oswald Regular', Tahoma, sans-serif;
     text-decoration: none;
 
     a {
@@ -17,32 +17,13 @@
 .search-container {
     padding: 13px;
 }
-.search-bar {
-    position: absolute;
-    right: 0;
-    width: $SEARCH_BAR_COLLAPSED_WIDTH;
-    background-color: $medium-gray;
-    -moz-transition: all $SEARCH_BAR_TRANSITION linear;
-    -o-transition: all $SEARCH_BAR_TRANSITION linear;
-    -webkit-transition: all $SEARCH_BAR_TRANSITION linear;
-    transition: all $SEARCH_BAR_TRANSITION linear;
+
+.uui-search-custom {
+    background-position: right 10px center;
+    padding: 0 35px 0 15px;
+    background-color: $dark-gray;
+
     &:focus {
         background-color: $white;
-        width: $SEARCH_BAR_DEPLOYED_WIDTH;
-    }
-}
-
-.right-inner-addon {
-    position: relative;
-
-    input {
-        padding-right: 30px;
-    }
-
-    i {
-        position: absolute;
-        right: 0;
-        padding: 10px 12px;
-        cursor: pointer;
     }
 }

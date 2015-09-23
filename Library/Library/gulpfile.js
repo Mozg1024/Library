@@ -19,7 +19,7 @@ var path = {
         html: 'build/',
         js: 'build/js/',
         css: 'build/css/',
-        img: 'build/img/',
+        img: 'build/images/',
         fonts: 'build/fonts/'
     },
     src: {

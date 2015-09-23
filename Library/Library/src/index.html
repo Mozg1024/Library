@@ -38,15 +38,12 @@
                 </ul>
             </nav>
 
-            <div class="pull-right user-profile">
+            <div class="pull-right user-profile-title">
                 Welcome, <a ui-sref="profile">{{vm.username}}</a>!
             </div>
 
             <div class="pull-right search-container">
-                <div class="form-group right-inner-addon">
-                    <input type="text" class="uui-form-element search-bar" />
-                    <i class="fa fa-search"></i>
-                </div>
+                <input type="text" class="uui-search uui-search-custom">
             </div>
 
         </div>
@@ -57,14 +54,16 @@
 
         <aside class="item-list-container">
             <ul>
-                <li>
+                <li class="active">
                     <div class="item-container">
                         <div class="item-body">
                             <img ng-src="img/books/rikhter.jpg" class="book-image" />
                         </div>
                         <div class="item-footer text-center">
                             <span class="footer-title">Книг доступно: </span>
-                            <span class="label label-info">12</span>
+                            <span class="uui-badge blue">
+                                <i class="white">12</i>
+                            </span>
                         </div>
                     </div>
                 </li>
