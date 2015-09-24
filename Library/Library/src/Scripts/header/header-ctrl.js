@@ -7,7 +7,10 @@
     function headerCtrl() {
         var vm = this;
 
-        vm.username = 'guest';
+        vm.user = {
+            name: 'Dmitry Vereskun',
+            avatar: 'images/users/Dmitry_Vereskun.jpg'
+        };
     }
 
 }());

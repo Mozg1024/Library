@@ -6,6 +6,7 @@
 //= ../../bower_components/bootstrap/dist/js/bootstrap.js
 //= ../../bower_components/angular/angular.js
 //= ../../bower_components/ui-router/release/angular-ui-router.js
+//= ../../bower_components/angular-mocks/angular-mocks.js
 
 //= libs/uui/uui-core.min.js
 //= libs/uui/uui-rating.min.js

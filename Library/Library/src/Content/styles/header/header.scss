@@ -1,21 +1,15 @@
-﻿.user-profile-title {
-    height: 60px;
-    line-height: 60px;
-    padding: 0 15px;
-    letter-spacing: 0.5px;
-    font-size: 15px;
-    color: $white;
-    font-family: 'Oswald Regular', Tahoma, sans-serif;
-    text-decoration: none;
-
-    a {
-        color: $white;
-    }
-
+﻿.search-container {
+    padding: 13px;
 }
 
-.search-container {
-    padding: 13px;
+.profile-name-custom {
+    padding: 0 15px;
+    color: $white;
+    text-transform: none;
+}
+
+.profile-photo.round {
+    border-radius: 50%;
 }
 
 .uui-search-custom {

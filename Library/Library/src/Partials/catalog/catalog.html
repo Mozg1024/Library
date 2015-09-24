@@ -1,12 +1,11 @@
 ﻿<div class="book-details clearfix">
 
     <div class="big-book-card pull-left">
-        <img ng-src={{vm.card}} alt="" />
+        <img ng-src={{vm.cover}} alt="{{vm.title}}" title="{{vm.title}}" />
     </div>
 
     <div class="pull-right">
-        <input type="checkbox" id="orderSwitch" checked/>
-        <!--data-on-text="ORDER" data-off-text="CANCEL"-->
+        <input type="checkbox" id="orderSwitch" data-on-text="ORDER" data-off-text="CANCEL" checked />
     </div>
 
     <h1>{{vm.title}}</h1>
@@ -27,14 +26,58 @@
 
 </div>
 
-<div class="book-description">{{vm.description}}</div>
+<div class="book-description" ng-repeat="line in vm.description">{{line}}</div>
+
+<hr />
+
+<ul class="uui-chat">
+
+    <li class="chat-body left" ng-repeat="comment in vm.comments">
+        <div class="chat-section photo">
+            <div class="photo-wrapper round">
+                <img ng-src={{comment.user.avatar}} title={{comment.user.name}} />
+            </div>
+        </div>
+
+        <div class="chat-section desk">
+            <div class="chat-desk clearfix">
+                <div class="chat-arrow"></div>
+
+                <p class="time pull-right">
+                    <i class="fa fa-calendar"></i>
+                    <span class="blue">{{comment.date | date : 'd MMMM yyyy'}}</span>
+                    <i class="fa fa-clock-o"></i>
+                    <span class="blue">{{comment.date | date : 'HH:mm'}}</span>
+                </p>
+
+                <p ng-repeat="line in comment.lines">
+                    {{line}}
+                </p>
+            </div>
+        </div>
+    </li>
+
+    <li class="chat-body message">
+        <div class="chat-section text-field">
+            <textarea class="uui-form-element" placeholder="Add comment"></textarea>
+        </div>
+        <div class="chat-section button">
+            <button class="uui-button lime-green" type="button">
+                <i class="fa fa-plus white"></i>
+            </button>
+        </div>
+    </li>
+
+</ul>
 
 
 
 <script>
-    $('.uui-rating').uui_rating('init', { count: 5, animate_hover: false });
-    $('.uui-rating').uui_rating('set_value', 2);
+    setTimeout(function () {
+        $('.uui-rating').uui_rating('init', { count: 5, animate_hover: false });
+        $('.uui-rating').uui_rating('set_value', 2);
 
-    $("#orderSwitch").bootstrapSwitch();
-    $(".bootstrap-switch").addClass("uui-switch lime-green");
+        $("#orderSwitch").bootstrapSwitch();
+        $(".bootstrap-switch").addClass("uui-switch lime-green");
+    }, 500);
 </script>
