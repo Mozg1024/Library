@@ -4,9 +4,9 @@
     textarea{
         resize:none;
     }
-}
-.leave-comment-btn{
-    margin-top: 20px;
+    button{
+        margin-top: 20px;
+    }
 }
 .comments-list{
     list-style: none;
@@ -19,10 +19,26 @@
     font-size: 14px;
     .comment-footer{
         font-size: 12px;
-        min-height: 20px;
+        height: 20px;
         span{
             line-height: 20px;
             vertical-align: middle;
         }
     }
+}
+.comments-count{
+    font-size: 16px;
+}
+.question-title::before{
+    content: 'Q:';
+    margin: 0 20px 0 0;
+    font-size: 30px;
+}
+.answer-text::before{
+    content: 'A:';
+    margin: 0 20px 0 0;
+    font-size: 30px;
+}
+.user-comments-container{
+
 }
