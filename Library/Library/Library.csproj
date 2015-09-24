@@ -98,11 +98,14 @@
     <Content Include="src\Content\images\books\book_4.png" />
     <Content Include="src\Content\images\books\htmlcss.jpg" />
     <Content Include="src\Content\images\books\rikhter.jpg" />
+    <Content Include="src\Content\images\icons\search-icon-gray.svg" />
+    <Content Include="src\Content\images\icons\search-icon-white.svg" />
     <Content Include="src\Content\styles\common.scss" />
     <Content Include="src\Content\styles\constants\colors.scss" />
     <Content Include="src\Content\styles\constants\sizes.scss" />
     <Content Include="src\Content\styles\constants\timings.scss" />
     <Content Include="src\Content\styles\header\header.scss" />
+    <Content Include="src\Content\styles\libs\bootstrap-switch.min.css" />
     <Content Include="src\Content\styles\libs\uui-all.scss" />
     <Content Include="src\Content\styles\main.scss" />
     <Content Include="src\Content\styles\faq\faq.scss" />
@@ -142,6 +145,7 @@
     <Content Include="src\Scripts\directives\item-card.js" />
     <Content Include="src\Scripts\faq\faq-ctrl.js" />
     <Content Include="src\Scripts\header\header-ctrl.js" />
+    <Content Include="src\Scripts\libs\uui\bootstrap-switch.min.js" />
     <Content Include="src\Scripts\libs\uui\uui-rating.min.js" />
     <Content Include="src\Scripts\main.js" />
     <Content Include="src\Scripts\profile\profile.js" />

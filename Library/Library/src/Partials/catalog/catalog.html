@@ -4,9 +4,14 @@
         <img ng-src={{vm.card}} alt="" />
     </div>
 
+    <div class="pull-right">
+        <input type="checkbox" id="orderSwitch" checked/>
+        <!--data-on-text="ORDER" data-off-text="CANCEL"-->
+    </div>
+
     <h1>{{vm.title}}</h1>
-    <h2>{{vm.author}}</h2>
-    <h3>{{vm.year}}</h3>
+    <h3>{{vm.author}}</h3>
+    <h4>{{vm.year}}</h4>
 
     <div class="badges">
         <span class="uui-badge blue">
@@ -18,13 +23,18 @@
         </span>
     </div>
 
-    <div class="uui-rating"></div>
+    <div class="uui-rating yellow"></div>
 
 </div>
 
 <div class="book-description">{{vm.description}}</div>
 
+
+
 <script>
     $('.uui-rating').uui_rating('init', { count: 5, animate_hover: false });
     $('.uui-rating').uui_rating('set_value', 2);
+
+    $("#orderSwitch").bootstrapSwitch();
+    $(".bootstrap-switch").addClass("uui-switch lime-green");
 </script>

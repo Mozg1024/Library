@@ -7,25 +7,29 @@
     width: 280px;
     overflow-y: auto;
 }
+
 .item-container {
     width: 200px;
     margin: 0 0 30px 0;
     margin: 0 auto;
     margin-bottom: 30px;
-    box-shadow: 0 1px 20px rgba(0,0,0,0.2);
+    border: $BORDER_UNFOCUSED;
     -moz-transition: all $ITEM_CARD_TRANSITION;
     -o-transition: all $ITEM_CARD_TRANSITION;
     -webkit-transition: all $ITEM_CARD_TRANSITION;
     transition: all $ITEM_CARD_TRANSITION;
+
     &:hover {
         cursor: pointer;
-        box-shadow: 0px 3px 20px rgba(0,0,0,1);
+        border: $BORDER_FOCUSED;
     }
 }
+
 .book-item-body {
     padding: 20px;
     height: 260px;
 }
+
 .item-footer {
     background: $dark-gray;
     height: 30px;
