@@ -146,7 +146,9 @@
     <Content Include="src\Partials\profile\profile.html" />
     <Content Include="src\Partials\question-card\question-card.html" />
     <Content Include="src\Scripts\app.js" />
+    <Content Include="src\Scripts\backend\catalog-mock.js" />
     <Content Include="src\Scripts\catalog\catalog-ctrl.js" />
+    <Content Include="src\Scripts\catalog\catalog-service.js" />
     <Content Include="src\Scripts\directives\item-card.js" />
     <Content Include="src\Scripts\faq\faq-ctrl.js" />
     <Content Include="src\Scripts\header\header-ctrl.js" />

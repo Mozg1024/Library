@@ -23,7 +23,8 @@
                 templateUrl: 'Partials/faq/faq.html',
                 controller: 'faqCtrl',
                 controllerAs: 'vm'
-            })
+            });
+        $urlRouterProvider.otherwise('/');
     }
 
 }());

@@ -4,7 +4,7 @@
     angular.module('app')
         .controller('faqCtrl', faqCtrl);
 
-    function faqCtrl() {
+    function faqCtrl(catalogService) {
         var vm = this;
     }
 
