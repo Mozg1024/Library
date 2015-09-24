@@ -6,6 +6,9 @@
         return {
             getAllBooks: function () {
                 return $http.get('/api/catalog');
+            },
+            getBook: function (id) {
+                return $http.get('/api/catalog/' + id);
             }
         };
     }
