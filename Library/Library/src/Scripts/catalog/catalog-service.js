@@ -18,10 +18,10 @@
                 return $http.get('/api/catalog/' + id);
             },
             order: function (bookId, userId) {
-                return $http.post('/api/order');
+                return $http.post('/api/order', { book: bookId, user: userId });
             },
-            refuse: function () {
-
+            refuse: function (bookId, userId) {
+                return $http.post('/api/refuse', { book: bookId, user: userId });
             }
 
         };
