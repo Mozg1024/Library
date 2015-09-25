@@ -142,6 +142,7 @@
     <Content Include="src\index.html" />
     <Content Include="src\Partials\book-card\book-card.html" />
     <Content Include="src\Partials\catalog\catalog.html" />
+    <Content Include="src\Partials\directives\search-input.html" />
     <Content Include="src\Partials\faq\faq.html" />
     <Content Include="src\Partials\profile\profile.html" />
     <Content Include="src\Partials\question-card\question-card.html" />
@@ -150,6 +151,7 @@
     <Content Include="src\Scripts\catalog\catalog-ctrl.js" />
     <Content Include="src\Scripts\catalog\catalog-service.js" />
     <Content Include="src\Scripts\directives\item-card.js" />
+    <Content Include="src\Scripts\directives\search-input.js" />
     <Content Include="src\Scripts\faq\faq-ctrl.js" />
     <Content Include="src\Scripts\filtres\books.js" />
     <Content Include="src\Scripts\filtres\trust.js" />

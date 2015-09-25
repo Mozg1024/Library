@@ -4,10 +4,10 @@
     angular.module('app')
         .config(routes);
 
-    function routes($stateProvider, $urlRouterProvider, $httpProvider) {
+    function routes($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('catalog', {
-                url: '/',
+                url: '/catalog?search',
                 controller: 'catalogCtrl',
                 controllerAs: 'vm',
                 templateUrl: 'Partials/catalog/catalog.html'
@@ -24,7 +24,8 @@
                 controller: 'faqCtrl',
                 controllerAs: 'vm'
             });
-        $urlRouterProvider.otherwise('/');
+
+        $urlRouterProvider.otherwise('/catalog');
     }
 
 }());

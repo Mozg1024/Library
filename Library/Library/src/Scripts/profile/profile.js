@@ -6,6 +6,14 @@
 
     function profileCtrl(catalogService) {
         var vm = this;
+
+        vm.booksHave = {
+            count: 10
+        };
+
+        vm.booksWant = {
+            count: 5
+        };
         
         catalogService.getAllBooks().then(function (response) {
             vm.books = response.data;

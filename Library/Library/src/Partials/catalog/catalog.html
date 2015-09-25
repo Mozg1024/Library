@@ -1,77 +1,98 @@
-﻿<div class="book-details clearfix">
+﻿<aside class="item-list-container">
+    <ul>
+        <li class="active" ng-repeat="book in vm.books" ng-click="vm.setActive(book.id)">
+            <div class="item-container">
+                <div class="item-body">
+                    <img ng-src="{{book.cover}}" class="book-image" />
+                </div>
+                <div class="item-footer text-center">
+                    <span class="footer-title">Книг доступно: </span>
+                    <span class="uui-badge blue">
+                        <i class="white">{{book.available}}</i>
+                    </span>
+                </div>
+            </div>
+        </li>
+    </ul>
+</aside>
 
-    <div class="big-book-card pull-left">
-        <img ng-src={{vm.book.cover}} alt="{{vm.book.title}}" title="{{vm.book.title}}" />
+<div class="main-container">
+
+    <div class="book-details clearfix">
+
+        <div class="big-book-card pull-left">
+            <img ng-src={{vm.activeBook.cover}} alt="{{vm.activeBook.title}}" title="{{vm.activeBook.title}}" />
+        </div>
+
+        <div class="pull-right">
+            <input type="checkbox" id="orderSwitch" data-on-text="ORDER" data-off-text="CANCEL" checked />
+        </div>
+
+        <h1>{{vm.activeBook.title}}</h1>
+        <h3>
+            <span ng-repeat="author in vm.activeBook.authors">{{author}}</span>
+        </h3>
+        <h4>{{vm.activeBook.year}}</h4>
+
+        <div class="badges">
+            <span class="uui-badge blue">
+                <i class="white">{{vm.activeBook.pages}} pages</i>
+            </span>
+
+            <span class="uui-badge blue">
+                <i class="white">{{vm.activeBook.available}}/{{vm.activeBook.count}} available</i>
+            </span>
+        </div>
+
+        <div class="uui-rating yellow"></div>
+
     </div>
 
-    <div class="pull-right">
-        <input type="checkbox" id="orderSwitch" data-on-text="ORDER" data-off-text="CANCEL" checked />
-    </div>
+    <div class="book-description">{{vm.activeBook.description}}</div>
 
-    <h1>{{vm.book.title}}</h1>
-    <h3>
-        <span ng-repeat="author in vm.book.authors">{{author}}</span>
-    </h3>
-    <h4>{{vm.book.year}}</h4>
+    <hr />
 
-    <div class="badges">
-        <span class="uui-badge blue">
-            <i class="white">{{vm.book.pages}} pages</i>
-        </span>
+    <ul class="uui-chat">
 
-        <span class="uui-badge blue">
-            <i class="white">{{vm.book.available}}/{{vm.book.count}} available</i>
-        </span>
-    </div>
+        <li class="chat-body left" ng-repeat="comment in vm.comments">
+            <div class="chat-section photo">
+                <div class="photo-wrapper round">
+                    <img ng-src={{comment.user.avatar}} alt={{comment.user.name}} title={{comment.user.name}} />
+                </div>
+            </div>
 
-    <div class="uui-rating yellow"></div>
+            <div class="chat-section desk">
+                <div class="chat-desk clearfix">
+                    <div class="chat-arrow"></div>
+
+                    <p class="time pull-right">
+                        <i class="fa fa-calendar"></i>
+                        <span class="blue">{{comment.date | date : 'd MMMM yyyy'}}</span>
+                        <i class="fa fa-clock-o"></i>
+                        <span class="blue">{{comment.date | date : 'HH:mm'}}</span>
+                    </p>
+
+                    <p ng-repeat="line in comment.lines">
+                        {{line}}
+                    </p>
+                </div>
+            </div>
+        </li>
+
+        <li class="chat-body message">
+            <div class="chat-section text-field">
+                <textarea class="uui-form-element" placeholder="Add comment"></textarea>
+            </div>
+            <div class="chat-section button">
+                <button class="uui-button lime-green" type="button">
+                    <i class="fa fa-plus white"></i>
+                </button>
+            </div>
+        </li>
+
+    </ul>
 
 </div>
-
-<div class="book-description">{{vm.book.description}}</div>
-
-<hr />
-
-<ul class="uui-chat">
-
-    <li class="chat-body left" ng-repeat="comment in vm.comments">
-        <div class="chat-section photo">
-            <div class="photo-wrapper round">
-                <img ng-src={{comment.user.avatar}} alt={{comment.user.name}} title={{comment.user.name}} />
-            </div>
-        </div>
-
-        <div class="chat-section desk">
-            <div class="chat-desk clearfix">
-                <div class="chat-arrow"></div>
-
-                <p class="time pull-right">
-                    <i class="fa fa-calendar"></i>
-                    <span class="blue">{{comment.date | date : 'd MMMM yyyy'}}</span>
-                    <i class="fa fa-clock-o"></i>
-                    <span class="blue">{{comment.date | date : 'HH:mm'}}</span>
-                </p>
-
-                <p ng-repeat="line in comment.lines">
-                    {{line}}
-                </p>
-            </div>
-        </div>
-    </li>
-
-    <li class="chat-body message">
-        <div class="chat-section text-field">
-            <textarea class="uui-form-element" placeholder="Add comment"></textarea>
-        </div>
-        <div class="chat-section button">
-            <button class="uui-button lime-green" type="button">
-                <i class="fa fa-plus white"></i>
-            </button>
-        </div>
-    </li>
-
-</ul>
-
 
 
 <script>
