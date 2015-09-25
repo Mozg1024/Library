@@ -33,11 +33,12 @@
 <script>
     setTimeout(function () {
         $('.uui-rating').uui_rating('init', { count: 5, animate_hover: false });
-        $('#book-1 .uui-rating').uui_rating('set_value', 2);
-        $('#book-2 .uui-rating').uui_rating('set_value', 1);
 
-        $("#orderSwitch-1").bootstrapSwitch();
-        $("#orderSwitch-2").bootstrapSwitch();
-        $(".bootstrap-switch").addClass("uui-switch lime-green");
+        for (var i = 0; i < 7; i++) {
+            $('#orderSwitch-' + i).bootstrapSwitch();
+            $('#book-' + i + ' .uui-rating').uui_rating('set_value', i % 5);
+        }
+
+        $('.bootstrap-switch').addClass('uui-switch lime-green');
     }, 500);
 </script>
