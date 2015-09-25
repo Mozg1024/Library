@@ -20,8 +20,8 @@
             order: function (bookId, userId) {
                 return $http.post('/api/order', { book: bookId, user: userId });
             },
-            refuse: function (bookId, userId) {
-                return $http.post('/api/refuse', { book: bookId, user: userId });
+            refuse: function (orderId) {
+                return $http.post('/api/refuse', orderId);
             }
 
         };
