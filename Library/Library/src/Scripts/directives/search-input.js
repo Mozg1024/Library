@@ -11,7 +11,10 @@
             templateUrl: 'Partials/directives/search-input.html',
             link: function (scope) {
                 scope.submit = function () {
-                    scope.callback({value: scope.value});
+                    var val = scope.value;
+
+                    scope.value = '';
+                    scope.callback({value: val});
                 }
             }
         };
