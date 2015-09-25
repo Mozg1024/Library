@@ -1,53 +1,54 @@
-﻿<h2 class="question-title">How to do anything?</h2>
-<p class="answer-text">
-    Velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt,
-    turpis dui ornare nisl, sollicitudin interdum turpis nunc eget sem nulla eu ultricies orci
-    praesent id augue nec lorem pretium congue sit amet ac nunc fusce iaculis lorem eu diam hendrerit
-    at mattis purus dignissim vivamus mauris tellus, fringilla vel dapibus a, blandit quis erat vivamus
-    elementum aliquam luctus etiam fringilla pretium sem vitae sodales mauris id nulla est praesent laoreet,
-    metus vel auctor aliquam, eros purus vulputate leo, eget consequat neque quam id tellus duis ultricies
-    tempor tortor, vitae dignissim ligula mattis nec in hac habitasse platea dictumst.
-</p>
+﻿<article class="faq-container">
 
-<hr />
+    <h2 class="question-title">{{vm.faqs[0].question}}</h2>
 
-<ul class="uui-chat">
+    <div class="answer-video-container" ng-show="{{vm.faqs[0].link}}">
+        <iframe width="560" height="315" ng-src="{{vm.faqs[0].link | trust}}" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-    <li class="chat-body left" ng-repeat="comment in vm.comments">
+    <p class="answer-text">{{vm.faqs[0].answer}}</p>
 
-        <div class="chat-section photo">
-            <div class="photo-wrapper round">
-                <img ng-src={{comment.user.avatar}} alt={{comment.user.name}} title={{comment.user.name}} />
+    <hr />
+
+    <ul class="uui-chat">
+
+        <li class="chat-body left" ng-repeat="comment in vm.comments">
+
+            <div class="chat-section photo">
+                <div class="photo-wrapper round">
+                    <img ng-src={{comment.user.avatar}} alt={{comment.user.name}} title={{comment.user.name}} />
+                </div>
             </div>
-        </div>
 
-        <div class="chat-section desk">
-            <div class="chat-desk clearfix">
-                <div class="chat-arrow"></div>
+            <div class="chat-section desk">
+                <div class="chat-desk clearfix">
+                    <div class="chat-arrow"></div>
 
-                <p class="time pull-right">
-                    <i class="fa fa-calendar"></i>
-                    <span class="blue">{{comment.date | date : 'd MMMM yyyy'}}</span>
-                    <i class="fa fa-clock-o"></i>
-                    <span class="blue">{{comment.date | date : 'HH:mm'}}</span>
-                </p>
+                    <p class="time pull-right">
+                        <i class="fa fa-calendar"></i>
+                        <span class="blue">{{comment.date | date : 'd MMMM yyyy'}}</span>
+                        <i class="fa fa-clock-o"></i>
+                        <span class="blue">{{comment.date | date : 'HH:mm'}}</span>
+                    </p>
 
-                <p ng-repeat="line in comment.lines">
-                    {{line}}
-                </p>
+                    <p ng-repeat="line in comment.lines">
+                        {{line}}
+                    </p>
+                </div>
             </div>
-        </div>
-    </li>
+        </li>
 
-    <li class="chat-body message">
-        <div class="chat-section text-field">
-            <textarea class="uui-form-element" placeholder="Add comment"></textarea>
-        </div>
-        <div class="chat-section button">
-            <button class="uui-button lime-green" type="button">
-                <i class="fa fa-plus white"></i>
-            </button>
-        </div>
-    </li>
+        <li class="chat-body message">
+            <div class="chat-section text-field">
+                <textarea class="uui-form-element" placeholder="Add comment"></textarea>
+            </div>
+            <div class="chat-section button">
+                <button class="uui-button lime-green" type="button">
+                    <i class="fa fa-plus white"></i>
+                </button>
+            </div>
+        </li>
 
-</ul>
+    </ul>
+
+</article>

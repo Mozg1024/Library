@@ -1,13 +1,21 @@
-﻿.question-title::before{
+.question-title::before {
     content: 'Q:';
     margin: 0 15px 0 0;
     font-size: 30px;
     color: $raspberry;
 }
 
-.answer-text::before{
+.answer-text::before {
     content: 'A:';
     margin: 0 15px 0 0;
     font-size: 30px;
     color: $lime-green;
+}
+
+.faq-container {
+    position: relative;
+}
+
+.answer-video-container {
+    margin: 0 42px;
 }
