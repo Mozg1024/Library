@@ -7,10 +7,17 @@
     function catalogCtrl($stateParams, catalogService) {
         var vm = this;
 
-        catalogService.getAllBooks().then(function (response) {
-            vm.books = response.data;
-            vm.activeBook = vm.books[0];
-        });
+        if ($stateParams.search) {
+            catalogService.getBySearchString($stateParams.search).then(function (response) {
+                vm.books = response.data;
+                vm.activeBook = vm.books[0];
+            });
+        } else {
+            catalogService.getAllBooks().then(function (response) {
+                vm.books = response.data;
+                vm.activeBook = vm.books[0];
+            });
+        }
 
         vm.comments = [
             {

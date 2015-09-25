@@ -28,3 +28,4 @@
 //= backend/catalog-mock.js
 //= filtres/trust.js
 //= directives/search-input.js
+//= filtres/books.js
