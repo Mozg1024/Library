@@ -1,0 +1,26 @@
+/*
+* Third Party
+*/
+
+@import "../../../bower_components/bootstrap/dist/css/bootstrap.css";
+@import "../../../bower_components/bootstrap/dist/css/bootstrap-theme.css";
+@import "../../../bower_components/font-awesome/css/font-awesome.css";
+
+@import "libs/uui-all";
+@import "libs/bootstrap-switch.min.css";
+
+/*
+* Custom
+*/
+
+@import "constants/colors";
+@import "constants/sizes";
+@import "constants/timings";
+@import "constants/common-styles";
+
+@import "common/common";
+@import "header/header";
+@import "faq/faq";
+@import "aside/aside";
+@import "catalog/catalog";
+@import "profile/profile";
