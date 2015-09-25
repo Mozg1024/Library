@@ -4,11 +4,12 @@
     angular.module('app')
         .controller('catalogCtrl', catalogCtrl);
 
-    function catalogCtrl(catalogService) {
+    function catalogCtrl($stateParams, catalogService) {
         var vm = this;
 
-        catalogService.getBook(1).then(function (response) {
-            vm.book = response.data;
+        catalogService.getAllBooks().then(function (response) {
+            vm.books = response.data;
+            vm.activeBook = vm.books[0];
         });
 
         vm.comments = [
@@ -35,5 +36,9 @@
                 ]
             }
         ];
+
+        vm.setActive = function (bookId) {
+            vm.activeBook = vm.books[_.findIndex(vm.books, {id: bookId})];
+        }
     }
 }());

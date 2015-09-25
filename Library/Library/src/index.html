@@ -41,10 +41,9 @@
 
                 <ul class="uui-navigation nav navbar-nav right">
                     <li class="search-container">
-                        <input type="text" class="uui-search uui-search-custom">
+                        <div search-input callback="vm.searchCallback(value)"></div>
                     </li>
-
-                    <li class="dropdown uui-profile-menu">
+                    <li class="uui-profile-menu">
                         <a ui-sref="profile">
                             <span class="profile-name profile-name-custom">{{vm.user.name}}</span>
                             <div class="profile-photo round">
@@ -52,84 +51,13 @@
                             </div>
                         </a>
                     </li>
-
                 </ul>
             </nav>
         </div>
 
     </header>
 
-    <div>
-
-        <aside class="item-list-container" ng-controller="catalogCtrl">
-            <ul>
-                <li class="active">
-                    <div class="item-container">
-                        <div class="item-body">
-                            <img ng-src="images/books/book_5.png" class="book-image" />
-                        </div>
-                        <div class="item-footer text-center">
-                            <span class="footer-title">Книг доступно: </span>
-                            <span class="uui-badge blue">
-                                <i class="white">12</i>
-                            </span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-container">
-                        <div class="item-body">
-                            <img ng-src="images/books/book_6.png" class="book-image" />
-                        </div>
-                        <div class="item-footer text-center">
-                            <span href="#" class="footer-title">
-                                Дней до возврата
-                                <span class="footer-count label label-info">
-                                    13
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-container">
-                        <div class="question-item-body text-center">
-                            <h4>How to do anything?</h4>
-                        </div>
-                        <div class="item-footer text-center">
-                            <span class="footer-title">Комментариев: </span>
-                            <span class="label label-info">1</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-container">
-                        <div class="question-item-body text-center">
-                            <h4>Как заказать книгу?</h4>
-                        </div>
-                        <div class="item-footer text-center">
-                            <span class="footer-title">Комментариев: </span>
-                            <span class="label label-info">1</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="item-container">
-                        <div class="question-item-body text-center">
-                            <h4>Как угнать самокат если ты никогда не использовал газовый балон?</h4>
-                        </div>
-                        <div class="item-footer text-center">
-                            <span class="footer-title">Комментариев: </span>
-                            <span class="label label-info">1</span>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </aside>
-
-        <div class="main-container" ui-view></div>
-
-    </div>
+    <div ui-view></div>
 
     <!--Scripts-->
     <script src="js/main.js"></script>

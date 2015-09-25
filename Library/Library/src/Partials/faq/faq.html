@@ -1,50 +1,72 @@
-<h2 class="question-title">{{vm.faqs[0].question}}</h2>
+<aside class="item-list-container">
+    <ul>
+        <li ng-repeat="faq in vm.faqs">
+            <div class="item-container">
+                <div class="question-item-body text-center">
+                    <h4>{{faq.question}}</h4>
+                </div>
+                <div class="item-footer text-center">
+                    <span class="footer-title">Quantity: </span>
+                    <span class="uui-badge blue">
+                        <i class="white">{{faq.commentCount}}</i>
+                    </span>
+                </div>
+            </div>
+        </li>
+    </ul>
+</aside>
 
-<div class="answer-video-container" ng-show="{{vm.faqs[0].link}}">
-    <iframe width="560" height="315" ng-src="{{vm.faqs[0].link | trust}}" frameborder="0" allowfullscreen></iframe>
+<div class="main-container">
+
+    <h2 class="question-title">{{vm.faqs[0].question}}</h2>
+
+    <div class="answer-video-container" ng-show="{{vm.faqs[0].link}}">
+        <iframe width="560" height="315" ng-src="{{vm.faqs[0].link | trust}}" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <p class="answer-text">{{vm.faqs[0].answer}}</p>
+
+    <hr />
+
+    <ul class="uui-chat">
+
+        <li class="chat-body left" ng-repeat="comment in vm.comments">
+
+            <div class="chat-section photo">
+                <div class="photo-wrapper round">
+                    <img ng-src={{comment.user.avatar}} alt={{comment.user.name}} title={{comment.user.name}} />
+                </div>
+            </div>
+
+            <div class="chat-section desk">
+                <div class="chat-desk clearfix">
+                    <div class="chat-arrow"></div>
+
+                    <p class="time pull-right">
+                        <i class="fa fa-calendar"></i>
+                        <span class="blue">{{comment.date | date : 'd MMMM yyyy'}}</span>
+                        <i class="fa fa-clock-o"></i>
+                        <span class="blue">{{comment.date | date : 'HH:mm'}}</span>
+                    </p>
+
+                    <p ng-repeat="line in comment.lines">
+                        {{line}}
+                    </p>
+                </div>
+            </div>
+        </li>
+
+        <li class="chat-body message">
+            <div class="chat-section text-field">
+                <textarea class="uui-form-element" placeholder="Add comment"></textarea>
+            </div>
+            <div class="chat-section button">
+                <button class="uui-button lime-green" type="button">
+                    <i class="fa fa-plus white"></i>
+                </button>
+            </div>
+        </li>
+
+    </ul>
+
 </div>
-
-<p class="answer-text">{{vm.faqs[0].answer}}</p>
-
-<hr />
-
-<ul class="uui-chat">
-
-    <li class="chat-body left" ng-repeat="comment in vm.comments">
-
-        <div class="chat-section photo">
-            <div class="photo-wrapper round">
-                <img ng-src={{comment.user.avatar}} alt={{comment.user.name}} title={{comment.user.name}} />
-            </div>
-        </div>
-
-        <div class="chat-section desk">
-            <div class="chat-desk clearfix">
-                <div class="chat-arrow"></div>
-
-                <p class="time pull-right">
-                    <i class="fa fa-calendar"></i>
-                    <span class="blue">{{comment.date | date : 'd MMMM yyyy'}}</span>
-                    <i class="fa fa-clock-o"></i>
-                    <span class="blue">{{comment.date | date : 'HH:mm'}}</span>
-                </p>
-
-                <p ng-repeat="line in comment.lines">
-                    {{line}}
-                </p>
-            </div>
-        </div>
-    </li>
-
-    <li class="chat-body message">
-        <div class="chat-section text-field">
-            <textarea class="uui-form-element" placeholder="Add comment"></textarea>
-        </div>
-        <div class="chat-section button">
-            <button class="uui-button lime-green" type="button">
-                <i class="fa fa-plus white"></i>
-            </button>
-        </div>
-    </li>
-
-</ul>
