@@ -13,8 +13,7 @@
         };
 
         vm.searchCallback = function (value) {
-            $state.go('catalog', {search: value});
-            console.log(value);
+            $state.go('catalog', { search: value });
         }
     }
 
