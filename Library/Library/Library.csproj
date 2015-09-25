@@ -96,8 +96,8 @@
     <Content Include="src\Content\images\books\book_2.png" />
     <Content Include="src\Content\images\books\book_3.png" />
     <Content Include="src\Content\images\books\book_4.png" />
-    <Content Include="src\Content\images\books\htmlcss.jpg" />
-    <Content Include="src\Content\images\books\rikhter.jpg" />
+    <Content Include="src\Content\images\books\book_5.png" />
+    <Content Include="src\Content\images\books\book_6.png" />
     <Content Include="src\Content\images\icons\search-icon-gray.svg" />
     <Content Include="src\Content\images\icons\search-icon-white.svg" />
     <Content Include="src\Content\images\users\Aleksei_Prokofev.jpg" />

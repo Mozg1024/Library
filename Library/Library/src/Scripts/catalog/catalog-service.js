@@ -5,6 +5,7 @@
         .factory('catalogService', catalogService);
 
     function catalogService($http) {
+        var books = [];
         return {
             getAllBooks: function () {
                 return $http.get('/api/catalog');
