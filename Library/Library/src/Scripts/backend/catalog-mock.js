@@ -91,6 +91,13 @@
                 rating: 1,
                 description: 'Язык программирования QBasic на протяжении многих лет пользуется огромным спросом среди начинающих и опытных программистов. Данный сборник задач содержит массу авторских разработок, которые позволяют убедиться в оригинальности и огромных возможностях Бейсика. Именно огромный читательский спрос на первое издание побудил автора заняться разработкой второго, не менее увлекательного самоучителя.'
             }
+        ],
+        orders = [
+            {
+                id: 1,
+                bookId: 21,
+                userId: 12
+            }
         ];
 
         $httpBackend.whenGET('/api/catalog').respond(200, books, {});
@@ -117,6 +124,19 @@
             }
         });
         
+        $httpBackend.whenPOST('/api/order').respond(function (method, url, data) {
+            var newOrder = data,
+                item;
+
+           item = _.find(orders, function (order) {
+                return order.bookId === newOrder.book && order.userId === newOrder.user;
+            });
+            if (searchString) {
+                return [200, {}, {}];
+            } else {
+                return [500, {}, {}];
+            }
+        });
 
         $httpBackend.whenGET(/.*/).passThrough();
     }
