@@ -13,11 +13,6 @@
         <span ng-repeat="author in vm.book.authors">{{author}}</span>
     </h3>
     <h4>{{vm.book.year}}</h4>
-    <h1>{{vm.book.title}}</h1>
-    <h3>
-        <span ng-repeat="author in vm.book.authors">{{author}}</span>
-    </h3>
-    <h4>{{vm.book.year}}</h4>
 
     <div class="badges">
         <span class="uui-badge blue">
@@ -85,6 +80,6 @@
         $('.uui-rating').uui_rating('set_value', 2);
 
         $("#orderSwitch").bootstrapSwitch();
-        $(".bootstrap-switch").addClass("uui-switch lime-green");
+        //$(".bootstrap-switch").addClass("uui-switch lime-green");
     }, 500);
 </script>
