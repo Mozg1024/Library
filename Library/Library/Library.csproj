@@ -100,7 +100,11 @@
     <Content Include="src\Content\images\books\rikhter.jpg" />
     <Content Include="src\Content\images\icons\search-icon-gray.svg" />
     <Content Include="src\Content\images\icons\search-icon-white.svg" />
-    <Content Include="src\Content\styles\common.scss" />
+    <Content Include="src\Content\images\users\Aleksei_Prokofev.jpg" />
+    <Content Include="src\Content\images\users\Dmitry_Vereskun.jpg" />
+    <Content Include="src\Content\images\users\Rustam_Mamedov.jpg" />
+    <Content Include="src\Content\images\users\Vladimir_Levin.jpg" />
+    <Content Include="src\Content\styles\common\common.scss" />
     <Content Include="src\Content\styles\constants\colors.scss" />
     <Content Include="src\Content\styles\constants\sizes.scss" />
     <Content Include="src\Content\styles\constants\timings.scss" />
@@ -112,6 +116,7 @@
     <Content Include="src\Content\styles\aside\aside.scss" />
     <Content Include="src\Content\styles\catalog\catalog.scss" />
     <Content Include="src\Content\styles\constants\common-styles.scss" />
+    <Content Include="src\Content\styles\profile\profile.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -148,6 +153,7 @@
     <Content Include="src\Scripts\faq\faq-ctrl.js" />
     <Content Include="src\Scripts\header\header-ctrl.js" />
     <Content Include="src\Scripts\libs\uui\bootstrap-switch.min.js" />
+    <Content Include="src\Scripts\libs\uui\uui-core.min.js" />
     <Content Include="src\Scripts\libs\uui\uui-rating.min.js" />
     <Content Include="src\Scripts\main.js" />
     <Content Include="src\Scripts\profile\profile.js" />
