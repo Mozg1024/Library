@@ -9,7 +9,9 @@
     </div>
 
     <h1>{{vm.title}}</h1>
-    <h3>{{vm.author}}</h3>
+    <h3>
+        <span ng-repeat="author in vm.authors">{{author}}</span>
+    </h3>
     <h4>{{vm.year}}</h4>
 
     <div class="badges">

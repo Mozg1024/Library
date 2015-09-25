@@ -4,14 +4,23 @@
     angular.module('app')
         .controller('catalogCtrl', catalogCtrl);
 
-    function catalogCtrl() {
+    function catalogCtrl(catalogService) {
         var vm = this;
+        vm.books = [];
+        vm.filteredBooks = [];
+        vm.getAllBooks = function () {
+            catalogService.getAllBooks().then(function (response) {
+                vm.books = response.data;
+                console.log(vm.books);
+            });
+        };
+        vm.getAllBooks();
 
         vm.id = 1;
         vm.cover = 'images/books/book_1.png';
 
         vm.title = 'Book 1';
-        vm.author = 'Jeffrey Richter';
+        vm.authors = ['Jeffrey Richter', 'lskdglksdhg'];
         vm.year = 2015;
         vm.pages = 777;
         vm.available = 3;
@@ -48,5 +57,4 @@
             }
         ];
     }
-
 }());

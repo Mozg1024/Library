@@ -15,103 +15,44 @@
     </form>
     <div class="user-comments-container">
         <span class="comments-count blue">Комментариев: 255</span>
-        <ul class="comments-list">
-            <li>
-                <div class="comment-container">
-                    <p>
-                        elit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt,
-                        turpis dui ornare nisl, sollicitudin interdum turpis nunc eget sem nulla eu ultricies orci
-                    </p>
-                    <div class="comment-footer">
-                        <span class="username-comment pull-left">Username</span>
-                        <span class="date-comment pull-right">11-11-2011</span>
+        <ul class="uui-chat">
+
+            <li class="chat-body left" ng-repeat="comment in vm.comments">
+                <div class="chat-section photo">
+                    <div class="photo-wrapper round">
+                        <img ng-src={{comment.user.avatar}} alt={{comment.user.name}} title={{comment.user.name}} />
+                    </div>
+                </div>
+
+                <div class="chat-section desk">
+                    <div class="chat-desk clearfix">
+                        <div class="chat-arrow"></div>
+
+                        <p class="time pull-right">
+                            <i class="fa fa-calendar"></i>
+                            <span class="blue">{{comment.date | date : 'd MMMM yyyy'}}</span>
+                            <i class="fa fa-clock-o"></i>
+                            <span class="blue">{{comment.date | date : 'HH:mm'}}</span>
+                        </p>
+
+                        <p ng-repeat="line in comment.lines">
+                            {{line}}
+                        </p>
                     </div>
                 </div>
             </li>
-            <li>
-                <div class="comment-container">
-                    <p>
-                        elit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt,
-                        turpis dui ornare nisl, sollicitudin interdum turpis nunc eget sem nulla eu ultricies orci
-                    </p>
-                    <div class="comment-footer">
-                        <span class="username-comment pull-left">Username</span>
-                        <span class="date-comment pull-right">11-11-2011</span>
-                    </div>
+
+            <li class="chat-body message">
+                <div class="chat-section text-field">
+                    <textarea class="uui-form-element" placeholder="Add comment"></textarea>
+                </div>
+                <div class="chat-section button">
+                    <button class="uui-button lime-green" type="button">
+                        <i class="fa fa-plus white"></i>
+                    </button>
                 </div>
             </li>
-            <li>
-                <div class="comment-container">
-                    <p>
-                        elit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt,
-                        turpis dui ornare nisl, sollicitudin interdum turpis nunc eget sem nulla eu ultricies orci
-                    </p>
-                    <div class="comment-footer">
-                        <span class="username-comment pull-left">Username</span>
-                        <span class="date-comment pull-right">11-11-2011</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="comment-container">
-                    <p>
-                        elit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt,
-                        turpis dui ornare nisl, sollicitudin interdum turpis nunc eget sem nulla eu ultricies orci
-                    </p>
-                    <div class="comment-footer">
-                        <span class="username-comment pull-left">Username</span>
-                        <span class="date-comment pull-right">11-11-2011</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="comment-container">
-                    <p>
-                        elit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt,
-                        turpis dui ornare nisl, sollicitudin interdum turpis nunc eget sem nulla eu ultricies orci
-                    </p>
-                    <div class="comment-footer">
-                        <span class="username-comment pull-left">Username</span>
-                        <span class="date-comment pull-right">11-11-2011</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="comment-container">
-                    <p>
-                        elit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt,
-                        turpis dui ornare nisl, sollicitudin interdum turpis nunc eget sem nulla eu ultricies orci
-                    </p>
-                    <div class="comment-footer">
-                        <span class="username-comment pull-left">Username</span>
-                        <span class="date-comment pull-right">11-11-2011</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="comment-container">
-                    <p>
-                        elit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt,
-                        turpis dui ornare nisl, sollicitudin interdum turpis nunc eget sem nulla eu ultricies orci
-                    </p>
-                    <div class="comment-footer">
-                        <span class="username-comment pull-left">Username</span>
-                        <span class="date-comment pull-right">11-11-2011</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="comment-container">
-                    <p>
-                        elit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt,
-                        turpis dui ornare nisl, sollicitudin interdum turpis nunc eget sem nulla eu ultricies orci
-                    </p>
-                    <div class="comment-footer">
-                        <span class="username-comment pull-left">Username</span>
-                        <span class="date-comment pull-right">11-11-2011</span>
-                    </div>
-                </div>
-            </li>
+
         </ul>
     </div>
 </article>

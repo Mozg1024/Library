@@ -39,18 +39,18 @@
             },
             {
                 bookId: 235,
-                typeId: 2,
-                icon: 'images/books/rikhter.jpg',
+                cover: 'images/books/rikhter.jpg',
                 title: 'Some book',
                 description: 'Description',
                 authors: [
                     'First Author',
                     'Second Author'
                 ],
-                pageCount: 666,
-                rate: 4,
+                pages: 666,
+                rating: 4,
                 year: 2015,
-                isAvaliable: true
+                available: 3,
+                count: 5
             }
         ];
 
