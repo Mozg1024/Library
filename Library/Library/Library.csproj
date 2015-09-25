@@ -151,6 +151,7 @@
     <Content Include="src\Scripts\catalog\catalog-service.js" />
     <Content Include="src\Scripts\directives\item-card.js" />
     <Content Include="src\Scripts\faq\faq-ctrl.js" />
+    <Content Include="src\Scripts\filtres\books.js" />
     <Content Include="src\Scripts\filtres\trust.js" />
     <Content Include="src\Scripts\header\header-ctrl.js" />
     <Content Include="src\Scripts\libs\uui\bootstrap-switch.min.js" />

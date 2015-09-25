@@ -4,7 +4,7 @@
     angular.module('app')
         .run(fakeBack);
 
-    function fakeBack($httpBackend) {
+    function fakeBack($httpBackend, $filter) {
     
         var books = [
             {
@@ -78,10 +78,33 @@
                 count: 3,
                 rating: 1,
                 description: 'Язык программирования QBasic на протяжении многих лет пользуется огромным спросом среди начинающих и опытных программистов. Данный сборник задач содержит массу авторских разработок, которые позволяют убедиться в оригинальности и огромных возможностях Бейсика. Именно огромный читательский спрос на первое издание побудил автора заняться разработкой второго, не менее увлекательного самоучителя.'
+            },
+            {
+                id: 7,
+                cover: 'images/books/book_6.png',
+                title: 'Бейсик в задачах и примерах',
+                authors: ['Чарльз Лейзерсон, Рональд Ривест'],
+                year: 2001,
+                pages: 15,
+                available: 0,
+                count: 3,
+                rating: 1,
+                description: 'Язык программирования QBasic на протяжении многих лет пользуется огромным спросом среди начинающих и опытных программистов. Данный сборник задач содержит массу авторских разработок, которые позволяют убедиться в оригинальности и огромных возможностях Бейсика. Именно огромный читательский спрос на первое издание побудил автора заняться разработкой второго, не менее увлекательного самоучителя.'
             }
         ];
 
         $httpBackend.whenGET('/api/catalog').respond(200, books, {});
+
+        $httpBackend.whenPOST('/api/catalog/filtered').respond(function (method, url, data) {
+            var searchString = data;
+
+            if (searchString) {
+                var filteredBooks = $filter('booksSearch')(books, searchString);
+                return [200, filteredBooks, {}];
+            } else {
+                return [200, books, {}];
+            }
+        });
 
         $httpBackend.whenGET(/^\/api\/catalog\/[0-9]+$/).respond(function (method, url) {
             var regexp = /[0-9]+$/,
@@ -93,6 +116,7 @@
                 }
             }
         });
+        
 
         $httpBackend.whenGET(/.*/).passThrough();
     }

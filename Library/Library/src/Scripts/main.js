@@ -26,3 +26,4 @@
 //= catalog/catalog-service.js
 //= backend/catalog-mock.js
 //= filtres/trust.js
+//= filtres/books.js

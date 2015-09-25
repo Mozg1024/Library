@@ -4,11 +4,19 @@
     angular.module('app')
         .controller('catalogCtrl', catalogCtrl);
 
-    function catalogCtrl(catalogService) {
+    function catalogCtrl(catalogService, $filter) {
         var vm = this;
 
+        catalogService.getAllBooks().then(function (response) {
+            vm.books = response.data;
+            console.log(vm.books);
+            console.log($filter('booksSearch')(vm.books, 'Мак'));
+        });
         catalogService.getBook(1).then(function (response) {
             vm.book = response.data;
+        });
+        catalogService.getBySearchString('Мак').then(function (response) {
+            console.log(response.data);
         });
 
         vm.comments = [
