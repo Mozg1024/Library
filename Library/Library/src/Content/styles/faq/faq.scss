@@ -1,20 +1,4 @@
-﻿.leave-comment-container{
-    width: 500px;
-    margin: 30px 0;
-
-    textarea{
-        resize:none;
-    }
-    button{
-        margin-top: 20px;
-    }
-}
-
-.comments-list{
-    list-style: none;
-}
-
-.comment-container{
+﻿.comment-container{
     width: 500px;
     padding: 5px;
     border: 1px solid black;
@@ -35,6 +19,7 @@
 .comments-count{
     font-size: 16px;
     margin: 20px 0;
+    display: inline-block;
 }
 .question-title::before{
     content: 'Q:';
@@ -48,6 +33,10 @@
     font-size: 30px;
     color: $lime-green;
 }
-.user-comments-container{
+.faq-container{
+    position: relative;
+}
 
+.answer-video-container{
+    margin: 0 42px;
 }

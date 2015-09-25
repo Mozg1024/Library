@@ -25,3 +25,4 @@
 //= profile/profile.js
 //= catalog/catalog-service.js
 //= backend/catalog-mock.js
+//= filtres/trust.js
