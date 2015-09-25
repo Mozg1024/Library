@@ -1,42 +1,17 @@
-﻿.comment-container{
-    width: 500px;
-    padding: 5px;
-    border: 1px solid black;
-    margin: 10px 0;
-    font-size: 14px;
-
-    .comment-footer{
-        font-size: 12px;
-        height: 20px;
-
-        span{
-            line-height: 20px;
-            vertical-align: middle;
-        }
-
-    }
-}
-.comments-count{
-    font-size: 16px;
-    margin: 20px 0;
-    display: inline-block;
-}
-.question-title::before{
+.question-title::before {
     content: 'Q:';
     margin: 0 15px 0 0;
     font-size: 30px;
     color: $raspberry;
 }
-.answer-text::before{
+
+.answer-text::before {
     content: 'A:';
     margin: 0 15px 0 0;
     font-size: 30px;
     color: $lime-green;
 }
-.faq-container{
-    position: relative;
-}
 
-.answer-video-container{
+.answer-video-container {
     margin: 0 42px;
 }

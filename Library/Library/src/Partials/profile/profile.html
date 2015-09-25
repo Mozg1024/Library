@@ -10,7 +10,7 @@
 
     <h1>{{book.title}}</h1>
     <h3>
-        <span ng-repeat="author in vm.authors">{{author}}</span>
+        <span ng-repeat="author in book.authors">{{author}}</span>
     </h3>
     <h4>{{book.year}}</h4>
 
@@ -39,6 +39,6 @@
             $('#book-' + i + ' .uui-rating').uui_rating('set_value', i % 5);
         }
 
-        $('.bootstrap-switch').addClass('uui-switch lime-green');
+        //$('.bootstrap-switch').addClass('uui-switch lime-green');
     }, 500);
 </script>
