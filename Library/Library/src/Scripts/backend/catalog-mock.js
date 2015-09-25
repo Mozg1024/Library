@@ -125,10 +125,11 @@
         });
         
         $httpBackend.whenPOST('/api/order').respond(function (method, url, data) {
-            var newOrder = data;
+            var newOrder = data,
+                item;
 
-            angular.forEach(orders, function (order) {
-
+           item = _.find(orders, function (order) {
+                return order.bookId === newOrder.book && order.userId === newOrder.user;
             });
             if (searchString) {
                 return [200, {}, {}];
