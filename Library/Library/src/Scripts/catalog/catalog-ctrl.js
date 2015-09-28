@@ -45,7 +45,7 @@
         ];
 
         vm.setActive = function (bookId) {
-            vm.activeBook = vm.books[_.findIndex(vm.books, {id: bookId})];
+            vm.activeBook = _.find(vm.books, { id: bookId });
         }
     }
 }());
