@@ -5,11 +5,11 @@
         .controller('headerCtrl', headerCtrl);
 
     function headerCtrl($scope, $state, usersService, loginService) {
-        //var vm = this;
+        $scope.user = {
+            id: loginService.getUserId()
+        };
 
-        //vm.userId = loginService.getUserId();
-
-        usersService.getUserById(loginService.getUserId()).then(function (response) {
+        usersService.getUserById($scope.user.id).then(function (response) {
             $scope.user = response.data;
         });
 
