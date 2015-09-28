@@ -98,7 +98,8 @@
                 bookId: 21,
                 userId: 12
             }
-        ];
+        ],
+        counter = 444;
 
         $httpBackend.whenGET('/api/catalog').respond(200, books, {});
 
@@ -128,13 +129,15 @@
             var newOrder = data,
                 item;
 
-           item = _.find(orders, function (order) {
+            item = _.find(orders, function (order) {
                 return order.bookId === newOrder.book && order.userId === newOrder.user;
             });
-            if (searchString) {
-                return [200, {}, {}];
+            if (!item) {
+                newOrder.id = counter++;
+                orders.push(newOrder);
+                return [200, newOrder.id, {}];
             } else {
-                return [500, {}, {}];
+               return [500, {}, {}];
             }
         });
 
