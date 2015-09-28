@@ -67,5 +67,16 @@
 
             return [200];
         });
+
+        $httpBackend.whenGET(/^\/api\/threads\/count\/[0-9]+$/).respond(function (method, url) {
+            var regexp = /[0-9]+$/,
+                threadId = +url.match(regexp),
+                thread = _.find(threads, { id: threadId })
+
+            if (thread) {
+                return [200, thread.comments.length, {}];
+            }
+            return [404];
+        });
     }
 }());
