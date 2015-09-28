@@ -149,7 +149,7 @@
     <Content Include="src\Scripts\app.js" />
     <Content Include="src\Scripts\backend\catalog-mock.js" />
     <Content Include="src\Scripts\catalog\catalog-ctrl.js" />
-    <Content Include="src\Scripts\catalog\catalog-service.js" />
+    <Content Include="src\Scripts\services\catalog-service.js" />
     <Content Include="src\Scripts\directives\item-card.js" />
     <Content Include="src\Scripts\directives\search-input.js" />
     <Content Include="src\Scripts\faq\faq-ctrl.js" />
