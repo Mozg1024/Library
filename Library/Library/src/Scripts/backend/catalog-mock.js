@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('app')
-        .run(fakeBack);
+        .run(fakeBooksBack);
 
-    function fakeBack($httpBackend, $filter) {
+    function fakeBooksBack($httpBackend, $filter) {
     
         var books = [
             {
@@ -140,7 +140,5 @@
                return [500, {}, {}];
             }
         });
-
-        $httpBackend.whenGET(/.*/).passThrough();
     }
 }());
