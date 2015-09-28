@@ -4,16 +4,17 @@
     angular.module('app')
         .controller('headerCtrl', headerCtrl);
 
-    function headerCtrl($state, usersService, loginService) {
-        var vm = this;
+    function headerCtrl($scope, $state, usersService, loginService) {
+        //var vm = this;
+
+        //vm.userId = loginService.getUserId();
 
         usersService.getUserById(loginService.getUserId()).then(function (response) {
-            vm.user = response.data;
+            $scope.user = response.data;
         });
 
-        vm.searchCallback = function (value) {
+        $scope.searchCallback = function (value) {
             $state.go('catalog', { search: value });
         }
     }
-
 }());
