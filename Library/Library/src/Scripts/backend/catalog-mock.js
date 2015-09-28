@@ -22,7 +22,7 @@
             },
             {
                 id: 2,
-                threadId: 2001,
+                threadId: 2002,
                 cover: 'images/books/book_2.png',
                 title: 'Программист-прагматик. Путь от подмастерья к мастеру',
                 authors: ['Э. Хант, Д. Томас'],
@@ -35,7 +35,7 @@
             },
             {
                 id: 3,
-                threadId: 2001,
+                threadId: 2003,
                 cover: 'images/books/book_3.png',
                 title: 'Структура и Интерпретация Компьютерных Программ',
                 authors: ['Харольд Абельсон, Джеральд Джей Сассман'],
@@ -48,7 +48,7 @@
             },
             {
                 id: 4,
-                threadId: 2001,
+                threadId: 2004,
                 cover: 'images/books/book_4.png',
                 title: 'Язык программирования C',
                 authors: ['Брайан Керниган, Деннис Ритчи'],
@@ -61,7 +61,7 @@
             },
             {
                 id: 5,
-                threadId: 2001,
+                threadId: 2005,
                 cover: 'images/books/book_5.png',
                 title: 'Алгоритмы. Построение и анализ',
                 authors: ['Томас Кормен, Чарльз Лейзерсон, Рональд Ривест, Клиффорд Штайн'],
@@ -74,7 +74,7 @@
             },
             {
                 id: 6,
-                threadId: 2001,
+                threadId: 2006,
                 cover: 'images/books/book_6.png',
                 title: 'Бейсик в задачах и примерах',
                 authors: ['И. К. Сафронов'],

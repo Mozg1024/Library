@@ -9,6 +9,7 @@
                 callback: '&'
             },
             templateUrl: 'Partials/directives/search-input.html',
+            replace: true,
             link: function (scope) {
                 scope.submit = function () {
                     var val = scope.value;

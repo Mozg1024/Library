@@ -34,6 +34,7 @@
 //= services/threads-service.js
 //= directives/search-input.js
 //= directives/user-card.js
+//= directives/chat.js
 //= header/header-ctrl.js
 //= catalog/catalog-ctrl.js
 //= faq/faq-ctrl.js

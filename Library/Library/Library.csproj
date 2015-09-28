@@ -142,6 +142,7 @@
     <Content Include="src\index.html" />
     <Content Include="src\Partials\book-card\book-card.html" />
     <Content Include="src\Partials\catalog\catalog.html" />
+    <Content Include="src\Partials\directives\chat.html" />
     <Content Include="src\Partials\directives\search-input.html" />
     <Content Include="src\Partials\directives\user-card.html" />
     <Content Include="src\Partials\faq\faq.html" />
@@ -153,6 +154,7 @@
     <Content Include="src\Scripts\backend\threads-mock.js" />
     <Content Include="src\Scripts\backend\users-mock.js" />
     <Content Include="src\Scripts\catalog\catalog-ctrl.js" />
+    <Content Include="src\Scripts\directives\chat.js" />
     <Content Include="src\Scripts\directives\user-card.js" />
     <Content Include="src\Scripts\services\catalog-service.js" />
     <Content Include="src\Scripts\directives\item-card.js" />
