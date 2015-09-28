@@ -8,6 +8,9 @@
         return {
             getThreadById: function (id) {
                 return $http.get('/api/threads/' + id);
+            },
+            getCommentsCount: function (id) {
+                return $http.get('/api/threads/count/' + id);
             }
         };
     }

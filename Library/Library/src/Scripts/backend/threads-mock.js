@@ -21,6 +21,18 @@
                         userId: 4003,
                         text: 'I am sick of this book. \n ((((((((((((',
                         date: new Date(2015, 5, 17, 13, 1)
+                    },
+                    {
+                        id: 3003,
+                        userId: 4003,
+                        text: 'I am sick of this book. \n ((((((((((((',
+                        date: new Date(2015, 5, 17, 13, 1)
+                    },
+                    {
+                        id: 3004,
+                        userId: 4003,
+                        text: 'I am sick of this book. \n ((((((((((((',
+                        date: new Date(2015, 5, 17, 13, 1)
                     }
                 ]
             },
@@ -44,6 +56,16 @@
 
             if (thread) {
                 return [200, thread, {}];
+            }
+            return [404];
+        });
+        $httpBackend.whenGET(/^\/api\/threads\/count\/[0-9]+$/).respond(function (method, url) {
+            var regexp = /[0-9]+$/,
+                threadId = +url.match(regexp),
+                thread = _.find(threads, { id: threadId })
+
+            if (thread) {
+                return [200, thread.comments.length, {}];
             }
             return [404];
         });
