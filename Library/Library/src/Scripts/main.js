@@ -24,7 +24,7 @@
 //= faq/faq-ctrl.js
 //= header/header-ctrl.js
 //= profile/profile.js
-//= catalog/catalog-service.js
+//= services/catalog-service.js
 //= backend/catalog-mock.js
 //= filtres/trust.js
 //= directives/search-input.js
