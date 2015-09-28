@@ -8,22 +8,22 @@
 
         var users = [
             {
-                id: 1001,
+                id: 4001,
                 avatar: 'images/users/Dmitry_Vereskun.jpg',
                 name: 'Dmitry Vereskun'
             },
             {
-                id: 1002,
+                id: 4002,
                 avatar: 'images/users/Aleksei_Prokofev.jpg',
                 name: 'Aleksey Prokofiev'
             },
             {
-                id: 1003,
+                id: 4003,
                 avatar: 'images/users/Rustam_Mamedov.jpg',
                 name: 'Rustam Mamedov'
             },
             {
-                id: 1004,
+                id: 4004,
                 avatar: 'images/users/Vladimir_Levin.jpg',
                 name: 'Vladimir Levin'
             }
@@ -37,7 +37,7 @@
             if (user) {
                 return [200, user, {}];
             }
-            return [403];
+            return [404];
         });
     }
 }());

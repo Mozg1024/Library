@@ -143,13 +143,17 @@
     <Content Include="src\Partials\book-card\book-card.html" />
     <Content Include="src\Partials\catalog\catalog.html" />
     <Content Include="src\Partials\directives\search-input.html" />
+    <Content Include="src\Partials\directives\user-card.html" />
     <Content Include="src\Partials\faq\faq.html" />
     <Content Include="src\Partials\profile\profile.html" />
     <Content Include="src\Partials\question-card\question-card.html" />
     <Content Include="src\Scripts\app.js" />
     <Content Include="src\Scripts\backend\backend-routes.js" />
     <Content Include="src\Scripts\backend\catalog-mock.js" />
-<Content Include="src\Scripts\backend\faq-mock.js" /><Content Include="src\Scripts\backend\users-mock.js" />    <Content Include="src\Scripts\catalog\catalog-ctrl.js" />
+    <Content Include="src\Scripts\backend\threads-mock.js" />
+    <Content Include="src\Scripts\backend\users-mock.js" />
+    <Content Include="src\Scripts\catalog\catalog-ctrl.js" />
+    <Content Include="src\Scripts\directives\user-card.js" />
     <Content Include="src\Scripts\services\catalog-service.js" />
     <Content Include="src\Scripts\directives\item-card.js" />
     <Content Include="src\Scripts\directives\search-input.js" />
@@ -163,7 +167,10 @@
     <Content Include="src\Scripts\main.js" />
     <Content Include="src\Scripts\profile\profile.js" />
     <Content Include="src\Scripts\routes.js" />
-<Content Include="src\Scripts\services\faq-service.js" /><Content Include="src\Scripts\services\users-service.js" />    <Content Include="Web.config" />
+    <Content Include="src\Scripts\services\threads-service.js" />
+    <Content Include="src\Scripts\services\login-service.js" />
+    <Content Include="src\Scripts\services\users-service.js" />
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

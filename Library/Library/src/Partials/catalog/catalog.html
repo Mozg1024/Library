@@ -57,7 +57,7 @@
         <li class="chat-body left" ng-repeat="comment in vm.comments">
             <div class="chat-section photo">
                 <div class="photo-wrapper round">
-                    <img ng-src={{comment.user.avatar}} alt={{comment.user.name}} title={{comment.user.name}} />
+                    <img user-card user-id="{{comment.userId}}" />
                 </div>
             </div>
 
@@ -72,9 +72,7 @@
                         <span class="blue">{{comment.date | date : 'HH:mm'}}</span>
                     </p>
 
-                    <p ng-repeat="line in comment.lines">
-                        {{line}}
-                    </p>
+                    {{comment.text}}
                 </div>
             </div>
         </li>
