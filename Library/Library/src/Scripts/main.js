@@ -21,11 +21,13 @@
 //= app.js
 //= routes.js
 //= catalog/catalog-ctrl.js
-//= faq/faq-ctrl.js
 //= header/header-ctrl.js
 //= profile/profile.js
 //= services/catalog-service.js
+//= services/faq-service.js
+//= faq/faq-ctrl.js
 //= backend/catalog-mock.js
+//= backend/faq-mock.js
 //= filtres/trust.js
 //= directives/search-input.js
 //= filtres/books.js

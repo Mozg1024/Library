@@ -4,9 +4,13 @@
     angular.module('app')
         .controller('faqCtrl', faqCtrl);
 
-    function faqCtrl(catalogService) {
+    function faqCtrl(catalogService, faqService) {
         var vm = this;
 
+        faqService.getAllFaqs().then(function (response) {
+            vm.faqs = response.data;
+        });
+        /*
         vm.faqs = [
             {
                 id: 1,
@@ -16,7 +20,7 @@
                 commentCount: 2
             }
         ];
-
+        */
         vm.comments = [
             {
                 user: {

@@ -148,6 +148,7 @@
     <Content Include="src\Partials\question-card\question-card.html" />
     <Content Include="src\Scripts\app.js" />
     <Content Include="src\Scripts\backend\catalog-mock.js" />
+    <Content Include="src\Scripts\backend\faq-mock.js" />
     <Content Include="src\Scripts\catalog\catalog-ctrl.js" />
     <Content Include="src\Scripts\services\catalog-service.js" />
     <Content Include="src\Scripts\directives\item-card.js" />
@@ -162,6 +163,7 @@
     <Content Include="src\Scripts\main.js" />
     <Content Include="src\Scripts\profile\profile.js" />
     <Content Include="src\Scripts\routes.js" />
+    <Content Include="src\Scripts\services\faq-service.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
