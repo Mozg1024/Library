@@ -24,10 +24,12 @@
 //= filtres/books.js
 //= backend/catalog-mock.js
 //= backend/users-mock.js
+//= backend/faq-mock.js
 //= backend/backend-routes.js
 //= services/catalog-service.js
 //= services/login-service.js
 //= services/users-service.js
+//= services/faq-service.js
 //= directives/search-input.js
 //= header/header-ctrl.js
 //= catalog/catalog-ctrl.js

@@ -9,6 +9,7 @@
 
         faqService.getAllFaqs().then(function (response) {
             vm.faqs = response.data;
+            vm.activeFaq = vm.faqs[0];
         });
         /*
         vm.faqs = [
@@ -21,6 +22,11 @@
             }
         ];
         */
+
+        vm.setActive = function (faqId) {
+            vm.activeFaq = _.find(vm.faqs, { id: faqId });
+        }
+
         vm.comments = [
             {
                 user: {
