@@ -4,18 +4,22 @@
     angular.module('app')
         .controller('catalogCtrl', catalogCtrl);
 
-    function catalogCtrl($stateParams, catalogService, threadsService) {
+    function catalogCtrl($state, $stateParams, catalogService, threadsService) {
         var vm = this;
 
         if ($stateParams.search) {
             catalogService.getBySearchString($stateParams.search).then(function (response) {
                 vm.books = response.data;
-                vm.setActive(1);
+                if (vm.books.length) {
+                    vm.setActive(vm.books[0].id);
+                } else {
+                    $state.go('404');
+                }
             });
         } else {
             catalogService.getAllBooks().then(function (response) {
                 vm.books = response.data;
-                vm.setActive(1);
+                vm.setActive(vm.books[0].id);
             });
         }
 
