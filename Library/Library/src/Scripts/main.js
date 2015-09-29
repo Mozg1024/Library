@@ -33,6 +33,8 @@
 //= services/faq-service.js
 //= services/threads-service.js
 //= directives/search-input.js
+//= directives/book-raiting.js
+//= directives/book-order.js
 //= directives/user-card.js
 //= directives/chat.js
 //= directives/book-details-card.js

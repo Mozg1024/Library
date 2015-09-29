@@ -17,24 +17,11 @@
 </aside>
 
 <div class="main-container">
-    
     <div class="book-details" book-details-card book="vm.activeBook">
         
     </div>
-
     <hr />
 
     <div chat thread-id="{{vm.activeBook.threadId}}"></div>
 
 </div>
-
-
-<script>
-    setTimeout(function () {
-        $('.uui-rating').uui_rating('init', { count: 5, animate_hover: false });
-        $('.uui-rating').uui_rating('set_value', 2);
-
-        $("#orderSwitch").bootstrapSwitch();
-        //$(".bootstrap-switch").addClass("uui-switch lime-green");
-    }, 500);
-</script>

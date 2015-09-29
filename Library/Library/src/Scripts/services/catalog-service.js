@@ -17,11 +17,14 @@
             getBook: function (id) {
                 return $http.get('/api/catalog/' + id);
             },
-            order: function (bookId, userId) {
-                return $http.post('/api/order', { book: bookId, user: userId });
+            orderBook: function (bookId) {
+                return $http.post('/api/order/', bookId);
             },
-            refuse: function (orderId) {
-                return $http.post('/api/refuse', orderId);
+            cancelBook: function (orderId) {
+                return $http.post('/api/order/cancel', orderId);
+            },
+            rateBook: function (bookId, bookRating) {
+                return $http.post('/api/ratebook', { id: bookId, rating: bookRating});
             }
 
         };

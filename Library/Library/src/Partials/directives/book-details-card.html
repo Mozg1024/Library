@@ -4,9 +4,7 @@
         <img ng-src={{book.cover}} alt="{{vm.book.title}}" title="{{book.title}}" />
     </div>
 
-    <div class="pull-right">
-        <input type="checkbox" id="orderSwitch" data-on-text="ORDER" data-off-text="CANCEL" checked />
-    </div>
+    <div book-order book-id="{{book.id}}"></div>
 
     <h1>{{book.title}}</h1>
     <h3>
@@ -24,17 +22,8 @@
         </span>
     </div>
 
-    <div class="uui-rating yellow"></div>
+    <div book-raiting book-id="{{book.id}}" book-rating="{{book.rating}}"></div>
 
 </div>
 
 <div class="book-description">{{book.description}}</div>
-<script>
-    setTimeout(function () {
-        $('.uui-rating').uui_rating('init', { count: 5, animate_hover: false });
-        $('.uui-rating').uui_rating('set_value', 2);
-
-        $("#orderSwitch").bootstrapSwitch();
-        //$(".bootstrap-switch").addClass("uui-switch lime-green");
-    }, 500);
-</script>
