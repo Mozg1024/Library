@@ -1,0 +1,40 @@
+﻿<div class="book-details clearfix">
+
+    <div class="big-book-card pull-left">
+        <img ng-src={{book.cover}} alt="{{vm.book.title}}" title="{{book.title}}" />
+    </div>
+
+    <div class="pull-right">
+        <input type="checkbox" id="orderSwitch" data-on-text="ORDER" data-off-text="CANCEL" checked />
+    </div>
+
+    <h1>{{book.title}}</h1>
+    <h3>
+        <span ng-repeat="author in book.authors">{{author}}</span>
+    </h3>
+    <h4>{{book.year}}</h4>
+
+    <div class="badges">
+        <span class="uui-badge blue">
+            <i class="white">{{book.pages}} pages</i>
+        </span>
+
+        <span class="uui-badge blue">
+            <i class="white">{{book.available}}/{{book.count}} available</i>
+        </span>
+    </div>
+
+    <div class="uui-rating yellow"></div>
+
+</div>
+
+<div class="book-description">{{book.description}}</div>
+<script>
+    setTimeout(function () {
+        $('.uui-rating').uui_rating('init', { count: 5, animate_hover: false });
+        $('.uui-rating').uui_rating('set_value', 2);
+
+        $("#orderSwitch").bootstrapSwitch();
+        //$(".bootstrap-switch").addClass("uui-switch lime-green");
+    }, 500);
+</script>

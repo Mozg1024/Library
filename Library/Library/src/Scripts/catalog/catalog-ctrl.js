@@ -10,12 +10,12 @@
         if ($stateParams.search) {
             catalogService.getBySearchString($stateParams.search).then(function (response) {
                 vm.books = response.data;
-                vm.setActive(1);
+                vm.activeBook = vm.books[0];
             });
         } else {
             catalogService.getAllBooks().then(function (response) {
                 vm.books = response.data;
-                vm.setActive(1);
+                vm.activeBook = vm.books[0];
             });
         }
 

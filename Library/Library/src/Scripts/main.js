@@ -35,6 +35,7 @@
 //= directives/search-input.js
 //= directives/user-card.js
 //= directives/chat.js
+//= directives/book-details-card.js
 //= header/header-ctrl.js
 //= catalog/catalog-ctrl.js
 //= faq/faq-ctrl.js

@@ -17,38 +17,10 @@
 </aside>
 
 <div class="main-container">
-
-    <div class="book-details clearfix">
-
-        <div class="big-book-card pull-left">
-            <img ng-src={{vm.activeBook.cover}} alt="{{vm.activeBook.title}}" title="{{vm.activeBook.title}}" />
-        </div>
-
-        <div class="pull-right">
-            <input type="checkbox" id="orderSwitch" data-on-text="ORDER" data-off-text="CANCEL" checked />
-        </div>
-
-        <h1>{{vm.activeBook.title}}</h1>
-        <h3>
-            <span ng-repeat="author in vm.activeBook.authors">{{author}}</span>
-        </h3>
-        <h4>{{vm.activeBook.year}}</h4>
-
-        <div class="badges">
-            <span class="uui-badge blue">
-                <i class="white">{{vm.activeBook.pages}} pages</i>
-            </span>
-
-            <span class="uui-badge blue">
-                <i class="white">{{vm.activeBook.available}}/{{vm.activeBook.count}} available</i>
-            </span>
-        </div>
-
-        <div class="uui-rating yellow"></div>
-
+    
+    <div class="book-details" book-details-card book="vm.activeBook">
+        
     </div>
-
-    <div class="book-description">{{vm.activeBook.description}}</div>
 
     <hr />
 
