@@ -172,9 +172,10 @@
     <Content Include="src\Scripts\libs\uui\uui-core.min.js" />
     <Content Include="src\Scripts\libs\uui\uui-rating.min.js" />
     <Content Include="src\Scripts\main.js" />
-    <Content Include="src\Scripts\profile\profile.js" />
+    <Content Include="src\Scripts\profile\profile-ctrl.js" />
     <Content Include="src\Scripts\routes.js" />
     <Content Include="src\Scripts\services\faq-service.js" />
+    <Content Include="src\Scripts\services\order-service.js" />
     <Content Include="src\Scripts\services\threads-service.js" />
     <Content Include="src\Scripts\services\login-service.js" />
     <Content Include="src\Scripts\services\users-service.js" />

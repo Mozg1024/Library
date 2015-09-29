@@ -39,11 +39,7 @@
                 threadId = +url.match(regexp),
                 thread = _.find(threads, { id: threadId });
 
-            if (thread) {
-                return [200, thread, {}];
-            }
-
-            return [404];
+            return [200, thread, {}];
         });
 
         $httpBackend.whenPOST(/^\/api\/threads\/[0-9]+$/).respond(function (method, url, data) {
@@ -76,7 +72,8 @@
             if (thread) {
                 return [200, thread.comments.length, {}];
             }
-            return [404];
+
+            return [200, 0, {}];
         });
     }
 }());

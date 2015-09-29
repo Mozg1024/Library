@@ -12,9 +12,9 @@
             replace: true,
             link: function (scope) {
 
-                scope.$watch('threadId', function () {
+                scope.$on('$destroy', scope.$watch('threadId', function () {
                     refresh();
-                });
+                }));
 
                 scope.addComment = function () {
                     threadsService.addCommentToThread(scope.threadId, scope.textComment);
@@ -24,7 +24,7 @@
 
                 function refresh() {
                     threadsService.getThreadById(scope.threadId).then(function (response) {
-                        if (angular.isArray(response.data.comments)) {
+                        if (angular.isDefined(response.data) && angular.isArray(response.data.comments)) {
                             scope.comments = response.data.comments;
                         } else {
                             scope.comments = [];

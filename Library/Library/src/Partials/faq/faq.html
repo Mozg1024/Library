@@ -1,6 +1,6 @@
 <aside class="item-list-container">
     <ul>
-        <li ng-repeat="faq in vm.faqs" ng-click="vm.setActive(faq.id)">
+        <li ng-repeat="faq in vm.faqs" ng-click="vm.setActive(faq.id)" ng-class="vm.isActive(faq.id)">
             <div class="item-container">
                 <div class="question-item-body text-center">
                     <h4>{{faq.question}}</h4>

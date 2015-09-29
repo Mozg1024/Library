@@ -1,6 +1,6 @@
 ﻿<aside class="item-list-container">
     <ul>
-        <li>
+        <li ng-click="vm.setActive({ state: 'orders' })" ng-class="vm.isActive({ state: 'orders' })">
             <div class="item-container">
                 <div class="question-item-body text-center">
                     <h4>Books you have</h4>
@@ -8,12 +8,12 @@
                 <div class="item-footer text-center">
                     <span class="footer-title">Quantity: </span>
                     <span class="uui-badge blue">
-                        <i class="white">{{vm.booksHave.count}}</i>
+                        <i class="white">{{vm.orderedBooks.length}}</i>
                     </span>
                 </div>
             </div>
         </li>
-        <li>
+        <li ng-click="vm.setActive({ state: 'wishes' })" ng-class="vm.isActive({ state: 'wishes' })">
             <div class="item-container">
                 <div class="question-item-body text-center">
                     <h4>Books you want</h4>
@@ -21,7 +21,7 @@
                 <div class="item-footer text-center">
                     <span class="footer-title">Quantity: </span>
                     <span class="uui-badge blue">
-                        <i class="white">{{vm.booksWant.count}}</i>
+                        <i class="white">{{vm.wantedBooks.length}}</i>
                     </span>
                 </div>
             </div>
@@ -30,7 +30,7 @@
 </aside>
 
 <div class="main-container">
-    <div id="book-{{book.id}}" class="book-details clearfix" ng-repeat="book in vm.books">
+    <div id="book-{{book.id}}" class="book-details clearfix" ng-repeat="book in activeList">
 
         <div class="big-book-card pull-left">
             <img ng-src={{book.cover}} alt="{{book.title}}" title="{{book.title}}" />

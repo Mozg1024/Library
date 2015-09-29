@@ -1,6 +1,6 @@
 ﻿<aside class="item-list-container">
     <ul>
-        <li class="active" ng-repeat="book in vm.books" ng-click="vm.setActive(book.id)">
+        <li ng-repeat="book in vm.books" ng-click="vm.setActive(book.id)" ng-class="vm.isActive(book.id)">
             <div class="item-container">
                 <div class="item-body">
                     <img ng-src="{{book.cover}}" class="book-image" />
