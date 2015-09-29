@@ -23,6 +23,10 @@
                             catalogService.rateBook(scope.bookId, scope.actualRating);
                             uuiRaitingElement.uui_rating('set_value', scope.bookRating);
                         });
+                        
+                        scope.$watch('bookId', function () {
+                            uuiRaitingElement.uui_rating('set_value', scope.bookRating);
+                        });
                 }
             };
         } 
