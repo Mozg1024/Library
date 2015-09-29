@@ -28,42 +28,6 @@
 
     <hr />
 
-    <ul class="uui-chat">
-
-        <li class="chat-body left" ng-repeat="comment in vm.comments">
-            <div class="chat-section photo">
-                <div class="photo-wrapper round">
-                    <img user-card user-id="{{comment.userId}}" />
-                </div>
-            </div>
-
-            <div class="chat-section desk">
-                <div class="chat-desk clearfix">
-                    <div class="chat-arrow"></div>
-
-                    <p class="time pull-right">
-                        <i class="fa fa-calendar"></i>
-                        <span class="blue">{{comment.date | date : 'd MMMM yyyy'}}</span>
-                        <i class="fa fa-clock-o"></i>
-                        <span class="blue">{{comment.date | date : 'HH:mm'}}</span>
-                    </p>
-
-                    {{comment.text}}
-                </div>
-            </div>
-        </li>
-
-        <li class="chat-body message">
-            <div class="chat-section text-field">
-                <textarea class="uui-form-element" placeholder="Add comment"></textarea>
-            </div>
-            <div class="chat-section button">
-                <button class="uui-button lime-green" type="button">
-                    <i class="fa fa-plus white"></i>
-                </button>
-            </div>
-        </li>
-
-    </ul>
+    <div chat thread-id="{{vm.activeFaq.threadId}}">></div>
 
 </div>

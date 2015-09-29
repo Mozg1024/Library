@@ -23,6 +23,10 @@
                 templateUrl: 'Partials/faq/faq.html',
                 controller: 'faqCtrl',
                 controllerAs: 'vm'
+            })
+            .state('404', {
+                url: '/404',
+                templateUrl: 'Partials/404/404.html'
             });
 
         $urlRouterProvider.otherwise('/catalog');
