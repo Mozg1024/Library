@@ -180,7 +180,7 @@
         });
         
         $httpBackend.whenPOST(/^\/api\/order\/?$/).respond(function (method, url, data) {
-            var book = _.find(books, { id: data }),
+            var book = _.find(books, { id: +data }),
                 order = {
                     userId: +loginService.getUserId(),
                     bookId: data
@@ -195,7 +195,7 @@
         });
 
         $httpBackend.whenPOST(/^\/api\/order\/cancel\/?$/).respond(function (method, url, data) {
-            var order = _.find(orders, { id: data }),
+            var order = _.find(orders, { id: +data }),
                 loggedUserId = +loginService.getUserId();
 
             if (order) {

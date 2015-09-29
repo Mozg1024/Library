@@ -15,15 +15,20 @@
                     var orderSwitch = $('#orderSwitch');
 
                     element.on('click', function () {
-                        /*if(orderSwitch.bootstrapSwitch('state')) {
-                            catalogService.cancelBook(scope.bookId).then(function (response) {
 
+                        if(!orderSwitch.bootstrapSwitch('state')) {
+
+                            catalogService.orderBook(scope.bookId).then(function (response) {
+                                scope.orderId = response.data;
                             });
                         } else {
-                            catalogService.orderBook(scope.bookId).then(function (response) {
 
+                            catalogService.cancelBook(scope.orderId).then(function (response) {
+                               console.log(response.data);
+                            },function (response) {
+                                console.log(response.status);
                             });
-                        }*/
+                        }
                     });
                 }
             };
