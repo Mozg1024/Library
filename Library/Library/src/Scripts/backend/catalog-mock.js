@@ -4,7 +4,7 @@
     angular.module('app')
         .run(fakeBooksBack);
 
-    function fakeBooksBack($httpBackend, $filter) {
+    function fakeBooksBack($httpBackend, $filter, loginService) {
     
         var books = [
             {
@@ -86,18 +86,78 @@
                 description: 'Язык программирования QBasic на протяжении многих лет пользуется огромным спросом среди начинающих и опытных программистов. Данный сборник задач содержит массу авторских разработок, которые позволяют убедиться в оригинальности и огромных возможностях Бейсика. Именно огромный читательский спрос на первое издание побудил автора заняться разработкой второго, не менее увлекательного самоучителя.'
             }
         ],
+
         orders = [
             {
-                id: 1,
-                bookId: 21,
-                userId: 12
+                id: 5001,
+                userId: 4001,
+                bookId: 6
+            },
+            {
+                id: 5002,
+                userId: 4002,
+                bookId: 2
+            },
+            {
+                id: 5003,
+                userId: 4001,
+                bookId: 4
+            },
+            {
+                id: 5004,
+                userId: 4003,
+                bookId: 1
+            },
+            {
+                id: 5005,
+                userId: 4001,
+                bookId: 3
+            },
+            {
+                id: 5006,
+                userId: 4004,
+                bookId: 5
             }
         ],
-        counter = 444;
 
-        $httpBackend.whenGET('/api/catalog').respond(200, books, {});
+        wishes = [
+            {
+                id: 5007,
+                userId: 4001,
+                bookId: 1
+            },
+            {
+                id: 5008,
+                userId: 4002,
+                bookId: 5
+            },
+            {
+                id: 5009,
+                userId: 4001,
+                bookId: 2
+            },
+            {
+                id: 5010,
+                userId: 4003,
+                bookId: 2
+            },
+            {
+                id: 5011,
+                userId: 4001,
+                bookId: 5
+            },
+            {
+                id: 5012,
+                userId: 4004,
+                bookId: 3
+            }
+        ],
 
-        $httpBackend.whenPOST('/api/catalog/filtered').respond(function (method, url, data) {
+        orderCounter = 5013;
+
+        $httpBackend.whenGET(/^\/api\/catalog\/?$/).respond(200, books, {});
+
+        $httpBackend.whenPOST(/^\/api\/catalog\/filtered\/?$/).respond(function (method, url, data) {
             var searchString = data;
 
             if (searchString) {
@@ -119,20 +179,51 @@
             }
         });
         
-        $httpBackend.whenPOST('/api/order').respond(function (method, url, data) {
-            var newOrder = data,
-                item;
+        $httpBackend.whenPOST(/^\/api\/order\/?$/).respond(function (method, url, data) {
+            var book = _.find(books, { id: data }),
+                order = {
+                    userId: +loginService.getUserId(),
+                    bookId: data
+                };
 
-            item = _.find(orders, function (order) {
-                return order.bookId === newOrder.book && order.userId === newOrder.user;
-            });
-            if (!item) {
-                newOrder.id = counter++;
-                orders.push(newOrder);
-                return [200, newOrder.id, {}];
-            } else {
-               return [500, {}, {}];
+            if (book) {
+                order.id = orderCounter++;
+                wishes.push(order);
+                return [200, order.id, {}];
             }
+            return [404];
+        });
+
+        $httpBackend.whenPOST(/^\/api\/order\/cancel\/?$/).respond(function (method, url, data) {
+            var order = _.find(orders, { id: data }),
+                loggedUserId = +loginService.getUserId();
+
+            if (order) {
+                if (order.userId === loggedUserId) {
+                    orders = _.without(orders, order);
+                    return [200];
+                }
+                return [403];
+            }
+            return [404];
+        });
+
+        $httpBackend.whenGET(/^\/api\/ordered\/books\/?$/).respond(function (method, url) {
+            var loggedUserId = +loginService.getUserId(),
+                userOrders = _.filter(orders, { userId: loggedUserId });
+
+            return [200, _.filter(books, function (book) {
+                return _.find(userOrders, { bookId: book.id });
+            })];
+        });
+
+        $httpBackend.whenGET(/^\/api\/wanted\/books\/?$/).respond(function (method, url) {
+            var loggedUserId = +loginService.getUserId(),
+                userWishes = _.filter(wishes, { userId: loggedUserId });
+
+            return [200, _.filter(books, function (book) {
+                return _.find(userWishes, { bookId: book.id });
+            })];
         });
     }
 }());

@@ -8,7 +8,8 @@
 //= ../../bower_components/angular-cookies/angular-cookies.js
 //= ../../bower_components/angular-mocks/angular-mocks.js
 //= ../../bower_components/ui-router/release/angular-ui-router.js
-//= ../../bower_components/underscore/underscore.js
+//= ../../bower_components/lodash/lodash.js
+
 
 //= libs/uui/uui-core.min.js
 //= libs/uui/uui-rating.min.js
@@ -32,10 +33,11 @@
 //= services/users-service.js
 //= services/faq-service.js
 //= services/threads-service.js
+//= services/order-service.js
 //= directives/search-input.js
 //= directives/user-card.js
 //= directives/chat.js
 //= header/header-ctrl.js
 //= catalog/catalog-ctrl.js
 //= faq/faq-ctrl.js
-//= profile/profile.js
+//= profile/profile-ctrl.js

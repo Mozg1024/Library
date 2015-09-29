@@ -1,4 +1,18 @@
-﻿.item-list-container {
+﻿.item-container {
+    width: 200px;
+    margin: 0 0 30px 0;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border: $BORDER_UNFOCUSED;
+    transition: all $ITEM_CARD_TRANSITION;
+
+    &:hover {
+        cursor: pointer;
+        border: $BORDER_FOCUSED;
+    }
+}
+
+.item-list-container {
     border-right: 1px solid black;
     position: fixed;
     top: 70px;
@@ -6,21 +20,8 @@
     bottom: 0;
     width: 280px;
     overflow-y: auto;
-}
 
-.item-container {
-    width: 200px;
-    margin: 0 0 30px 0;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border: $BORDER_UNFOCUSED;
-    -moz-transition: all $ITEM_CARD_TRANSITION;
-    -o-transition: all $ITEM_CARD_TRANSITION;
-    -webkit-transition: all $ITEM_CARD_TRANSITION;
-    transition: all $ITEM_CARD_TRANSITION;
-
-    &:hover {
-        cursor: pointer;
+    li.active .item-container {
         border: $BORDER_FOCUSED;
     }
 }
