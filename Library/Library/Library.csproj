@@ -143,7 +143,9 @@
     <Content Include="src\Partials\404\404.html" />
     <Content Include="src\Partials\book-card\book-card.html" />
     <Content Include="src\Partials\catalog\catalog.html" />
+    <Content Include="src\Partials\directives\aside-item.html" />
     <Content Include="src\Partials\directives\book-details-card.html" />
+    <Content Include="src\Partials\directives\book-order.html" />
     <Content Include="src\Partials\directives\book-rating.html" />
     <Content Include="src\Partials\directives\chat.html" />
     <Content Include="src\Partials\directives\search-input.html" />
@@ -158,11 +160,14 @@
     <Content Include="src\Scripts\backend\threads-mock.js" />
     <Content Include="src\Scripts\backend\users-mock.js" />
     <Content Include="src\Scripts\catalog\catalog-ctrl.js" />
+    <Content Include="src\Scripts\directives\aside-item.js" />
     <Content Include="src\Scripts\directives\book-details-card.js" />
+    <Content Include="src\Scripts\directives\book-order.js" />
+    <Content Include="src\Scripts\directives\book-raiting.js" />
     <Content Include="src\Scripts\directives\chat.js" />
+    <Content Include="src\Scripts\directives\text-multiline.js" />
     <Content Include="src\Scripts\directives\user-card.js" />
     <Content Include="src\Scripts\services\catalog-service.js" />
-    <Content Include="src\Scripts\directives\item-card.js" />
     <Content Include="src\Scripts\directives\search-input.js" />
     <Content Include="src\Scripts\faq\faq-ctrl.js" />
     <Content Include="src\Scripts\filtres\books.js" />
@@ -184,9 +189,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\Partials\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

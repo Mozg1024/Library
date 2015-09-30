@@ -6,12 +6,12 @@
         return {
             restrict: "A",
             scope: {
-                userId: '@'
+                userCard: '@'
             },
             templateUrl: 'Partials/directives/user-card.html',
             replace: true,
             link: function (scope) {
-                usersService.getUserById(scope.userId).then(function (response) {
+                usersService.getUserById(scope.userCard).then(function (response) {
                     scope.user = response.data;
                 });
             }

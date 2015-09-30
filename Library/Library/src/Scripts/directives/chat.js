@@ -6,24 +6,24 @@
         return {
             restrict: "A",
             scope: {
-                threadId: '@'
+                chat: '@'
             },
             templateUrl: 'Partials/directives/chat.html',
             replace: true,
             link: function (scope) {
 
-                scope.$on('$destroy', scope.$watch('threadId', function () {
+                scope.$on('$destroy', scope.$watch('chat', function () {
                     refresh();
                 }));
 
                 scope.addComment = function () {
-                    threadsService.addCommentToThread(scope.threadId, scope.textComment);
+                    threadsService.addCommentToThread(scope.chat, scope.textComment);
                     scope.textComment = '';
                     refresh();
                 }
 
                 function refresh() {
-                    threadsService.getThreadById(scope.threadId).then(function (response) {
+                    threadsService.getThreadById(scope.chat).then(function (response) {
                         if (angular.isDefined(response.data) && angular.isArray(response.data.comments)) {
                             scope.comments = response.data.comments;
                         } else {

@@ -6,7 +6,7 @@
         return {
             restrict: "A",
             scope: {
-                callback: '&'
+                searchInput: '&'
             },
             templateUrl: 'Partials/directives/search-input.html',
             replace: true,
@@ -15,7 +15,7 @@
                     var val = scope.value;
 
                     scope.value = '';
-                    scope.callback({value: val});
+                    scope.searchInput({ value: val });
                 }
             }
         };

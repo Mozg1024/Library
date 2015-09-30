@@ -1,17 +1,7 @@
-<aside class="item-list-container">
+﻿<aside class="item-list-container">
     <ul>
         <li ng-repeat="faq in vm.faqs" ng-click="vm.setActive(faq.id)" ng-class="vm.isActive(faq.id)">
-            <div class="item-container">
-                <div class="question-item-body text-center">
-                    <h4>{{faq.question}}</h4>
-                </div>
-                <div class="item-footer text-center">
-                    <span class="footer-title">Quantity: </span>
-                    <span class="uui-badge blue">
-                        <i class="white">{{faq.commentCount || 0}}</i>
-                    </span>
-                </div>
-            </div>
+            <div aside-item="{ title: faq.question, footer: { title: 'Комментариев', count: faq.commentCount || 0 } }"></div>
         </li>
     </ul>
 </aside>
@@ -28,6 +18,6 @@
 
     <hr />
 
-    <div chat thread-id="{{vm.activeFaq.threadId}}">></div>
+    <div chat="{{vm.activeFaq.threadId}}">></div>
 
 </div>
