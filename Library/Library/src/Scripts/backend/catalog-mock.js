@@ -89,11 +89,6 @@
 
         orders = [
             {
-                id: 5001,
-                userId: 4001,
-                bookId: 6
-            },
-            {
                 id: 5002,
                 userId: 4002,
                 bookId: 2
@@ -121,11 +116,6 @@
         ],
 
         wishes = [
-            {
-                id: 5007,
-                userId: 4001,
-                bookId: 1
-            },
             {
                 id: 5008,
                 userId: 4002,
@@ -225,7 +215,23 @@
                 return _.find(userWishes, { bookId: book.id });
             })];
         });
-        
+
+        $httpBackend.whenGET(/^\/api\/order\/status\/[0-9]+$/).respond(function (method, url) {
+            var regexp = /[0-9]+$/,
+                bookId = +url.match(regexp),
+                loggedUserId = +loginService.getUserId(),
+                userWishes = _.filter(wishes, { userId: loggedUserId }),
+                userOrders = _.filter(orders, { userId: loggedUserId });
+
+            if (_.find(userWishes, { bookId: bookId })) {
+                return [200, 'wish'];
+            }
+            if (_.find(userOrders, { bookId: bookId })) {
+                return [200, 'order'];
+            }
+            return [404];
+        });
+
         $httpBackend.whenPOST('/api/ratebook').respond(200, {}, {});
     }
 }());

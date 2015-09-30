@@ -10,50 +10,9 @@
 </aside>
 
 <div class="main-container">
+
     <div id="book-{{book.id}}" class="book-details clearfix" ng-repeat="book in activeList">
-
-        <div class="big-book-card pull-left">
-            <img ng-src={{book.cover}} alt="{{book.title}}" title="{{book.title}}" />
-        </div>
-
-        <div class="pull-right">
-            <input type="checkbox" id="orderSwitch-{{book.id}}" data-on-text="ORDER" data-off-text="CANCEL" />
-        </div>
-
-        <h1>{{book.title}}</h1>
-        <h3>
-            <span ng-repeat="author in book.authors">{{author}}</span>
-        </h3>
-        <h4>{{book.year}}</h4>
-
-        <div class="badges">
-            <span class="uui-badge blue">
-                <i class="white">{{book.pages}} pages</i>
-            </span>
-
-            <span class="uui-badge blue">
-                <i class="white">{{book.available}}/{{book.count}} available</i>
-            </span>
-        </div>
-
-        <div class="uui-rating yellow"></div>
-
+        <div class="book-details" book-details-card book="book"></div>
     </div>
 
 </div>
-
-
-
-
-<script>
-    setTimeout(function () {
-        $('.uui-rating').uui_rating('init', { count: 5, animate_hover: false });
-
-        for (var i = 0; i < 7; i++) {
-            $('#orderSwitch-' + i).bootstrapSwitch();
-            $('#book-' + i + ' .uui-rating').uui_rating('set_value', i % 5);
-        }
-
-        //$('.bootstrap-switch').addClass('uui-switch lime-green');
-    }, 500);
-</script>

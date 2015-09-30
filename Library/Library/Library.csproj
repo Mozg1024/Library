@@ -141,7 +141,6 @@
     <Content Include="src\Content\images\logo\Logo_Epam_White.svg" />
     <Content Include="src\index.html" />
     <Content Include="src\Partials\404\404.html" />
-    <Content Include="src\Partials\book-card\book-card.html" />
     <Content Include="src\Partials\catalog\catalog.html" />
     <Content Include="src\Partials\directives\aside-item.html" />
     <Content Include="src\Partials\directives\book-details-card.html" />
