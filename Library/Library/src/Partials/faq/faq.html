@@ -8,13 +8,13 @@
 
 <div class="main-container">
 
-    <h2 class="question-title">{{vm.activeFaq.question}}</h2>
+    <h2 class="question-title clearfix" text-multiline="vm.activeFaq.question"></h2>
 
-    <div class="answer-video-container" ng-show="vm.activeFaq.link">
-        <iframe width="560" height="315" ng-src="{{vm.activeFaq.link | trust}}" frameborder="0" allowfullscreen></iframe>
+    <div class="answer-text clearfix" text-multiline="vm.activeFaq.answer">
+        <div class="answer-video-container" ng-if="vm.activeFaq.link">
+            <iframe width="560" height="315" ng-src="{{vm.activeFaq.link | trust}}" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
-
-    <p class="answer-text">{{vm.activeFaq.answer}}</p>
 
     <hr />
 

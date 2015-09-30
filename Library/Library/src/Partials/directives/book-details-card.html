@@ -1,7 +1,7 @@
 ﻿<div class="book-details clearfix">
 
     <div class="big-book-card pull-left">
-        <img ng-src={{book.cover}} alt="{{vm.book.title}}" title="{{book.title}}" />
+        <img ng-src={{book.cover}} alt="{{book.title}}" title="{{book.title}}" />
     </div>
 
     <div book-order book-id="{{book.id}}"></div>
@@ -25,5 +25,3 @@
     <div book-raiting book-id="{{book.id}}" book-rating="{{book.rating}}"></div>
 
 </div>
-
-<div class="book-description">{{book.description}}</div>

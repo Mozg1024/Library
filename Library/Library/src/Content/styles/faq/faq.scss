@@ -1,11 +1,21 @@
+.question-title p {
+    margin-left: 42px;
+}
+
 .question-title::before {
+    float: left;
     content: 'Q:';
     margin: 0 15px 0 0;
     font-size: 30px;
     color: $raspberry;
 }
 
+.answer-text p {
+    margin-left: 42px;
+}
+
 .answer-text::before {
+    float: left;
     content: 'A:';
     margin: 0 15px 0 0;
     font-size: 30px;
@@ -13,5 +23,5 @@
 }
 
 .answer-video-container {
-    margin: 0 42px;
+    margin: 10px 42px;
 }

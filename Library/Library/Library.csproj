@@ -149,6 +149,7 @@
     <Content Include="src\Partials\directives\book-rating.html" />
     <Content Include="src\Partials\directives\chat.html" />
     <Content Include="src\Partials\directives\search-input.html" />
+    <Content Include="src\Partials\directives\text-multiline.html" />
     <Content Include="src\Partials\directives\user-card.html" />
     <Content Include="src\Partials\faq\faq.html" />
     <Content Include="src\Partials\profile\profile.html" />
