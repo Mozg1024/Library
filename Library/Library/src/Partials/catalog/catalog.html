@@ -1,25 +1,15 @@
 ﻿<aside class="item-list-container">
     <ul>
         <li ng-repeat="book in vm.books" ng-click="vm.setActive(book.id)" ng-class="vm.isActive(book.id)">
-            <div class="item-container">
-                <div class="item-body">
-                    <img ng-src="{{book.cover}}" class="book-image" />
-                </div>
-                <div class="item-footer text-center">
-                    <span class="footer-title">Книг доступно: </span>
-                    <span class="uui-badge blue">
-                        <i class="white">{{book.available}}</i>
-                    </span>
-                </div>
-            </div>
+            <div aside-item="{ image: book.cover, footer: { title: 'Книг доступно', count: book.available } }"></div>
         </li>
     </ul>
 </aside>
 
 <div class="main-container">
-    <div class="book-details" book-details-card book="vm.activeBook">
-        
-    </div>
+
+    <div class="book-details" book-details-card book="vm.activeBook"></div>
+
     <hr />
 
     <div chat="{{vm.activeBook.threadId}}"></div>
