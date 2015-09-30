@@ -41,13 +41,13 @@
 
                 <ul class="uui-navigation nav navbar-nav right">
                     <li class="search-container">
-                        <div search-input callback="searchCallback(value)"></div>
+                        <div search-input="searchCallback(value)"></div>
                     </li>
                     <li class="uui-profile-menu">
                         <a ui-sref="profile">
                             <span class="profile-name profile-name-custom">{{user.name}}</span>
                             <div class="profile-photo round">
-                                <img user-card user-id="{{user.id}}" />
+                                <img user-card="{{user.id}}" />
                             </div>
                         </a>
                     </li>

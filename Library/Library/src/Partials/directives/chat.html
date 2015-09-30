@@ -3,7 +3,7 @@
     <li class="chat-body left" ng-repeat="comment in comments">
         <div class="chat-section photo">
             <div class="photo-wrapper round">
-                <img user-card user-id="{{comment.userId}}" />
+                <img user-card="{{comment.userId}}" />
             </div>
         </div>
 
@@ -28,7 +28,7 @@
             <textarea class="uui-form-element" placeholder="Add comment" ng-model="textComment"></textarea>
         </div>
         <div class="chat-section button">
-            <button class="uui-button lime-green" type="button" ng-click="addComment()">
+            <button class="uui-button lime-green" type="button" ng-click="addComment()" ng-disabled="!textComment">
                 <i class="fa fa-plus white"></i>
             </button>
         </div>
