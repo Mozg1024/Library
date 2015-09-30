@@ -10,7 +10,7 @@
 
     <h1>{{book.title}}</h1>
     <h3>
-        <span ng-repeat="author in book.authors">{{author}}</span>
+        {{book.authors.join(', ')}}
     </h3>
     <h4>{{book.year}}</h4>
 
