@@ -246,5 +246,10 @@
         });
 
         $httpBackend.whenPOST(/^\/api\/ratebook\/?$/).respond(200);
+
+        $httpBackend.whenGET('/api/wishes').respond(function (method, url) {
+
+            return [200, wishes, {}];
+        });
     }
 }());

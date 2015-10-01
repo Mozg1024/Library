@@ -4,7 +4,7 @@
     angular.module('app')
         .factory('loginService', loginService);
 
-    function loginService($cookies) {
+    function loginService($cookies, $http) {
         return {
             getUserId: function () {
                 var userId = $cookies.get('userId');
@@ -15,6 +15,9 @@
                 }
 
                 return userId;
+            },
+            getUserById: function (id) {
+                return $http.get('/api/users/' + id);
             }
         };
     }

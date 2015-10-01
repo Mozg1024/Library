@@ -1,15 +1,13 @@
 ﻿<aside class="item-list-container">
     <ul>
-        <li ng-repeat="book in vm.books" ng-click="vm.setActive(book.id)" ng-class="vm.isActive(book.id)">
-            <div aside-item="{ image: book.cover, footer: { title: 'Книг доступно', count: book.available } }"></div>
+        <li ng-repeat="wish in vm.wishes" ng-click="vm.setActive(wish)" ng-class="vm.isActive(wish)">
+            <div aside-item="{ image: wish.cover, footer: { title: 'Номер заявки', count: wish.id } }"></div>
         </li>
     </ul>
 </aside>
 
 <div class="main-container">
 
-    <div class="book-details" book-details-card book="vm.activeBook"></div>
-
-    <div class="book-description" text-multiline="vm.activeBook.description"></div>
+    <div order-control-panel wish-id="{{vm.activeWish.id}}" book-id="{{vm.activeWish.bookId}}" user-id="{{vm.activeWish.userId}}"></div> 
 
 </div>

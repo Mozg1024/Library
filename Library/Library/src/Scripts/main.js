@@ -40,6 +40,7 @@
 //= directives/book-order.js
 //= directives/user-card.js
 //= directives/chat.js
+//= directives/order-control-panel.js
 //= directives/book-details-card.js
 //= directives/aside-item.js
 //= directives/text-multiline.js
