@@ -170,27 +170,40 @@
         });
         
         $httpBackend.whenPOST(/^\/api\/order\/?$/).respond(function (method, url, data) {
-            var book = _.find(books, { id: +data }),
-                order = {
-                    userId: +loginService.getUserId(),
-                    bookId: data
-                };
+            var loggedUserId = +loginService.getUserId(),
+                userOrders = _.filter(orders, { userId: loggedUserId }),
+                userWishes = _.filter(wishes, { userId: loggedUserId }),
+                book,
+                wish,
+                order;
 
-            if (book) {
-                order.id = orderCounter++;
-                wishes.push(order);
-                return [200, order.id, {}];
+            if (book = _.find(books, { id: +data })) {
+                wish = _.find(userWishes, { bookId: book.id });
+                order = _.find(userOrders, { bookId: book.id });
+
+                if (!wish || !order) {
+                    wish = {
+                        id: orderCounter++,
+                        userId: loggedUserId,
+                        bookId: book.id,
+                    };
+                    wishes.push(wish);
+                    return [200, wish.id];
+                }
             }
             return [404];
         });
 
         $httpBackend.whenPOST(/^\/api\/order\/cancel\/?$/).respond(function (method, url, data) {
-            var order = _.find(orders, { id: +data }),
-                loggedUserId = +loginService.getUserId();
+            var loggedUserId = +loginService.getUserId(),
+                userOrders = _.filter(orders, { userId: loggedUserId }),
+                userWishes = _.filter(wishes, { userId: loggedUserId }),
+                book,
+                wish;
 
-            if (order) {
-                if (order.userId === loggedUserId) {
-                    orders = _.without(orders, order);
+            if (book = _.find(books, { id: +data })) {
+                if (wish = _.find(userWishes, { bookId: book.id })) {
+                    wishes = _.without(wishes, wish);
                     return [200];
                 }
                 return [403];
@@ -232,6 +245,6 @@
             return [404];
         });
 
-        $httpBackend.whenPOST('/api/ratebook').respond(200, {}, {});
+        $httpBackend.whenPOST(/^\/api\/ratebook\/?$/).respond(200);
     }
 }());
