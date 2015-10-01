@@ -22,9 +22,15 @@
                 });
 
                 scope.$on('$destroy', scope.$watch('bookId', function () {
-                    orderService.getStatus(scope.bookId).then(function () {
+                    orderService.getStatus(scope.bookId).then(function (response) {
                         element.bootstrapSwitch('state', false, true);
+                        if (response.data === 'order') {
+                            element.bootstrapSwitch('disabled', true);
+                        } else {
+                            element.bootstrapSwitch('disabled', false);
+                        }
                     }, function () {
+                        element.bootstrapSwitch('disabled', false);
                         element.bootstrapSwitch('state', true, true);
                     });
                 }));

@@ -18,8 +18,8 @@
             orderBook: function (bookId) {
                 return $http.post('/api/order/', bookId);
             },
-            cancelBook: function (orderId) {
-                return $http.post('/api/order/cancel', orderId);
+            cancelBook: function (bookId) {
+                return $http.post('/api/order/cancel', bookId);
             }
         };
     }
