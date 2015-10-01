@@ -233,5 +233,7 @@
         });
 
         $httpBackend.whenPOST('/api/ratebook').respond(200, {}, {});
+
+        $httpBackend.whenGET('/api/wishes').respond(200, wishes, {});
     }
 }());

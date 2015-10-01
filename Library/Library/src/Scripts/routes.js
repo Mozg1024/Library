@@ -24,6 +24,12 @@
                 controller: 'faqCtrl',
                 controllerAs: 'vm'
             })
+            .state('admin', {
+                url: '/admin',
+                templateUrl: 'Partials/admin/admin.html',
+                controller: 'adminCtrl',
+                controllerAs: 'vm'
+            })
             .state('404', {
                 url: '/404',
                 templateUrl: 'Partials/404/404.html'

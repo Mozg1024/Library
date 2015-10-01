@@ -141,18 +141,19 @@
     <Content Include="src\Content\images\logo\Logo_Epam_White.svg" />
     <Content Include="src\index.html" />
     <Content Include="src\Partials\404\404.html" />
+    <Content Include="src\Partials\admin\admin.html" />
+    <Content Include="src\Partials\book-card\book-card.html" />
     <Content Include="src\Partials\catalog\catalog.html" />
-    <Content Include="src\Partials\directives\aside-item.html" />
     <Content Include="src\Partials\directives\book-details-card.html" />
     <Content Include="src\Partials\directives\book-order.html" />
     <Content Include="src\Partials\directives\book-rating.html" />
     <Content Include="src\Partials\directives\chat.html" />
     <Content Include="src\Partials\directives\search-input.html" />
-    <Content Include="src\Partials\directives\text-multiline.html" />
     <Content Include="src\Partials\directives\user-card.html" />
     <Content Include="src\Partials\faq\faq.html" />
     <Content Include="src\Partials\profile\profile.html" />
     <Content Include="src\Partials\question-card\question-card.html" />
+    <Content Include="src\Scripts\admin\admin-ctrl.js" />
     <Content Include="src\Scripts\app.js" />
     <Content Include="src\Scripts\backend\backend-routes.js" />
     <Content Include="src\Scripts\backend\catalog-mock.js" />
@@ -160,14 +161,14 @@
     <Content Include="src\Scripts\backend\threads-mock.js" />
     <Content Include="src\Scripts\backend\users-mock.js" />
     <Content Include="src\Scripts\catalog\catalog-ctrl.js" />
-    <Content Include="src\Scripts\directives\aside-item.js" />
     <Content Include="src\Scripts\directives\book-details-card.js" />
     <Content Include="src\Scripts\directives\book-order.js" />
     <Content Include="src\Scripts\directives\book-raiting.js" />
     <Content Include="src\Scripts\directives\chat.js" />
-    <Content Include="src\Scripts\directives\text-multiline.js" />
     <Content Include="src\Scripts\directives\user-card.js" />
+    <Content Include="src\Scripts\services\admin-service.js" />
     <Content Include="src\Scripts\services\catalog-service.js" />
+    <Content Include="src\Scripts\directives\item-card.js" />
     <Content Include="src\Scripts\directives\search-input.js" />
     <Content Include="src\Scripts\faq\faq-ctrl.js" />
     <Content Include="src\Scripts\filtres\books.js" />
@@ -177,10 +178,9 @@
     <Content Include="src\Scripts\libs\uui\uui-core.min.js" />
     <Content Include="src\Scripts\libs\uui\uui-rating.min.js" />
     <Content Include="src\Scripts\main.js" />
-    <Content Include="src\Scripts\profile\profile-ctrl.js" />
+    <Content Include="src\Scripts\profile\profile.js" />
     <Content Include="src\Scripts\routes.js" />
     <Content Include="src\Scripts\services\faq-service.js" />
-    <Content Include="src\Scripts\services\order-service.js" />
     <Content Include="src\Scripts\services\threads-service.js" />
     <Content Include="src\Scripts\services\login-service.js" />
     <Content Include="src\Scripts\services\users-service.js" />
@@ -189,7 +189,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="src\Partials\NewFolder1\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

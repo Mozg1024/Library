@@ -34,6 +34,7 @@
 //= services/faq-service.js
 //= services/threads-service.js
 //= services/order-service.js
+//= services/admin-service.js
 //= directives/search-input.js
 //= directives/book-raiting.js
 //= directives/book-order.js
@@ -46,3 +47,4 @@
 //= catalog/catalog-ctrl.js
 //= faq/faq-ctrl.js
 //= profile/profile-ctrl.js
+//= admin/admin-ctrl.js
