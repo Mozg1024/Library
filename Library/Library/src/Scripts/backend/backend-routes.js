@@ -6,6 +6,8 @@
         .run(backendRoutes);
 
     function backendRoutes($httpBackend) {
+        $httpBackend.whenGET(/\/api\/.*/).respond(200);
+
         $httpBackend.whenGET(/.*/).passThrough();
         $httpBackend.whenPOST(/.*/).passThrough();
         $httpBackend.whenPUT(/.*/).passThrough();

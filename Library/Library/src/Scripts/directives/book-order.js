@@ -13,33 +13,21 @@
             link: function (scope, element) {
                 element.bootstrapSwitch();
 
+                element.on('switchChange.bootstrapSwitch', function (event, state) {
+                    if (state) {
+                        orderService.cancelBook(scope.bookId);
+                    } else {
+                        orderService.orderBook(scope.bookId);
+                    }
+                });
+
                 scope.$on('$destroy', scope.$watch('bookId', function () {
-                    orderService.getStatus(scope.bookId).then(function (response) {
-                        element.bootstrapSwitch('state', false);
+                    orderService.getStatus(scope.bookId).then(function () {
+                        element.bootstrapSwitch('state', false, true);
                     }, function () {
-                        element.bootstrapSwitch('state', true);
+                        element.bootstrapSwitch('state', true, true);
                     });
                 }));
-
-
-                //var orderSwitch = $('#orderSwitch');
-
-                //element.on('click', function () {
-
-                //    if (!orderSwitch.bootstrapSwitch('state')) {
-
-                //        orderService.orderBook(scope.bookId).then(function (response) {
-                //            scope.orderId = response.data;
-                //        });
-                //    } else {
-
-                //        orderService.cancelBook(scope.orderId).then(function (response) {
-                //            console.log(response.data);
-                //        }, function (response) {
-                //            console.log(response.status);
-                //        });
-                //    }
-                //});
             }
         };
     });
