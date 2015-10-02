@@ -1,14 +1,14 @@
-﻿<aside class="item-list-container" ng-mouseenter="vm.mouseIn = true" ng-mouseleave="vm.mouseIn = false">
-    <ul id="book-carousel">
-        <li ng-repeat="book in vm.books" ng-click="vm.setActive(book.id)" ng-class="vm.isActive(book.id)">
-            <div aside-item="{ popupTitle: book.title, image: book.cover, footer: { title: 'Книг доступно', count: book.available } }" ng-style="vm.zIndex(book.id)"></div>
+﻿<aside class="item-list-container">
+    <ul id="book-carousel" ng-style="vm.rotate()">
+        <li ng-repeat="book in vm.books" ng-click="vm.setActive(book.id)" ng-class="vm.isActive(book.id)" ng-style="vm.style($index, vm.books.length)">
+            <div aside-item="{ popupTitle: book.title, image: book.cover, footer: { title: 'Книг доступно', count: book.available } }"></div>
         </li>
     </ul>
 </aside>
 
 <div class="main-container">
 
-    <div class="book-details" book-details-card book="vm.activeBook"></div>
+    <div book-details-card book="vm.activeBook"></div>
 
     <div class="book-description" text-multiline="vm.activeBook.description"></div>
 

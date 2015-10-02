@@ -1,34 +1,61 @@
 ﻿.item-container {
-    width: 200px;
-    position: relative;
+
+    width: 180px;
+
+    /*position: relative;
     left: 40px;
     margin-top: -85%;
+    transition: all $ITEM_CARD_TRANSITION;*/
     border: $BORDER_FOCUSED;
-    transition: all $ITEM_CARD_TRANSITION;
 
     &:hover {
         cursor: pointer;
-        transform-origin: bottom right;
+        /*transform-origin: bottom right;
         transform: rotate(10deg);
-        animation-duration: 0.5s;
+        animation-duration: 0.5s;*/
     }
 }
 
-.item-list-container {
+#book-carousel {
+    width: 80%;
+    height: 80%;
     position: fixed;
-    top: 70px;
-    left: 0;
-    bottom: 0;
-    width: 280px;
-    overflow: visible;
-    z-index: 10000;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
 
-    ul {
-        padding-top: 250px;
-    }
+    border: 2px solid green;
+}
+
+.item-list-container {
+    position: absolute;
+    top: 170px;
+    left: 40px;
+    width: 220px;
+    height: 300px;
+    overflow: visible;
+    perspective: 1000px;
+
+    border: 2px solid black;
 
     li {
+
         display: block;
+        position: absolute;
+
+        /*left: 10px;
+        top: 10px;*/
+
+
+        /*position: absolute;
+        display: block;
+        left: 40px;
+        top: 20px;*/
+
+
+        opacity: 0.8;
+        /*&.active {
+            opacity: 1;
+        }*/
     }
 }
 
@@ -58,46 +85,4 @@
 
 .book-image {
     max-width: 100%;
-}
-
-
-/*@-webkit-keyframes hinge {
-    0% {
-        -webkit-transform-origin: top left;
-        transform-origin: top left;
-        -webkit-animation-timing-function: ease-in-out;
-        animation-timing-function: ease-in-out
-    }
-
-    20%,60% {
-        -webkit-transform: rotate3d(0,0,1,80deg);
-        transform: rotate3d(0,0,1,80deg);
-        -webkit-transform-origin: top left;
-        transform-origin: top left;
-        -webkit-animation-timing-function: ease-in-out;
-        animation-timing-function: ease-in-out
-    }
-
-    40%,80% {
-        -webkit-transform: rotate3d(0,0,1,60deg);
-        transform: rotate3d(0,0,1,60deg);
-        -webkit-transform-origin: top left;
-        transform-origin: top left;
-        -webkit-animation-timing-function: ease-in-out;
-        animation-timing-function: ease-in-out;
-        opacity: 1
-    }
-
-    100% {
-        -webkit-transform: translate3d(0,700px,0);
-        transform: translate3d(0,700px,0);
-        opacity: 0
-    }
-}*/
-
-@keyframes hinge {
-    100% {
-        transform-origin: bottom right;
-        transform: rotate(20deg);
-    }
 }
