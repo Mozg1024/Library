@@ -1,32 +1,69 @@
-﻿<div class="book-details clearfix">
-  <div class="user-order-card">
-        <div class="uui-person-vertical-profile dark-blue">
+﻿<div class="order-control-panel clearfix">
+    <div class="user-order-card pull-left">
+        <div class="uui-person-horizontal-profile blue">
             <div class="person-profile-body">
                 <div class="person-profile-section">
+                    <div class="person-profile-photo">
+                        <img ng-src="{{user.avatar}}" alt="{{user.name}}" />
+                    </div>
                     <div class="person-profile-info">
                         <h3>{{user.name}}</h3>
-                        <p>Senior Software Engineer</p>
-                        <div class="border"></div>
-                        <p class="location">
-                            <a href="#" onclick="return false;">
-                                <span class="fa fa-map-marker"></span>
-                                <span>Belarus, Minsk, Kuprevicha, 1/1</span>
-                            </a>
-                        </p>
+                        <p>{{user.jobTitle || 'Job Title'}}</p>
                     </div>
-                    <div class="person-profile-photo">
-                        <img ng-src="{{user.avatar}}" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="person-profile-footer">
-                <div class="person-profile-section">
-                    <button class="uui-button">accept</button>
-                </div>
-                <div class="person-profile-section">
-                     <button class="uui-button">Decline</button>
                 </div>
             </div>
         </div>
+
+        <ul class="uui-items-list hover">
+            <li class="item-body">
+                <div class="item-section">
+                    <span class="fa fa-envelope-o"></span>
+                        Всего книг взято
+                    <span class="uui-label yellow pull-right">
+                        <i class="white">15</i>
+                    </span>
+                </div>
+            </li>
+            <li class="item-body">
+                <div class="item-section">
+                    <span class="fa fa-calendar"></span>
+                        Книг у пользователя
+                    <span class="uui-label raspberry pull-right">
+                        <i class="white">08</i>
+                    </span>
+                </div>
+            </li>
+            <li class="item-body">
+                <div class="item-section">
+                    <span class="fa fa-bell-o"></span>
+                        Просроченных сдач
+                    <span class="uui-label blue pull-right">
+                        <i class="white">06</i>
+                    </span>
+                </div>
+            </li>
+            <li class="item-body">
+                <div class="item-section">
+                    <span class="fa fa-comments-o"></span>
+                        Заказы
+                    <span class="uui-label lime-green pull-right">
+                        <i class="white">11</i>
+                    </span>
+                </div>
+            </li>
+        </ul>
     </div>
+    <section class="uui-info-panel-vertical blue book-order-panel">
+        <div class="info-panel-body">
+            <div class="info-panel-section">
+                <img ng-src={{book.cover}} alt="{{book.title}}" title="{{book.title}}"/>
+            </div>
+        </div>
+        <div class="info-panel-footer">
+            <div class="info-panel-section">
+                <button class="uui-button lime-green pull-left" ng-click="accept()" ng-disabled="book.available === 0">Accept</button>
+                <button class="uui-button raspberry pull-right" ng-click="decline()">Decline</button>
+            </div>
+       </div>
+   </section>
 </div>

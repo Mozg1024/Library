@@ -3,7 +3,7 @@
     angular.module('app')
         .directive('orderControlPanel', orderControlPanel);
 
-        function orderControlPanel (loginService, catalogService) {
+        function orderControlPanel (loginService, catalogService, adminService) {
             return {
                 restrict: 'A',
                 replace: true,
@@ -11,10 +11,12 @@
                 scope: {
                     wishId: '@',
                     bookId: '@',
-                    userId: '@'
+                    userId: '@',
+                    accept: '&',
+                    decline: '&'
                 },
                 link: function (scope, element, attrs) {
-
+                    
                     scope.$watch('wishId', function () {
                         catalogService.getBook(scope.bookId).then(function (response) {
                             scope.book = response.data;
@@ -23,7 +25,6 @@
                             scope.user = response.data;
                         });
                     });
-                    
                 }
             };
         }

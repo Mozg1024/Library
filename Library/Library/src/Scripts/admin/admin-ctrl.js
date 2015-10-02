@@ -3,28 +3,42 @@
     angular.module('app')
         .controller('adminCtrl', adminCtrl);
 
-        function adminCtrl (adminService, catalogService, loginService) {
-            var vm = this;
+        function adminCtrl ($scope, adminService, catalogService, loginService) {
 
-            adminService.getAllWishes().then(function (response) {
+            $scope.isActive = function (wishId) {
 
-                vm.wishes = response.data;
-                vm.setActive(vm.wishes[0].id);
-            });
-
-            vm.isActive = function (wish) {
-
-                if(vm.activeWish) {
-                    if (vm.activeWish.id === wish.id) {
+                if($scope.activeWish) {
+                    if ($scope.activeWish.id === wishId) {
                         return 'active';
                     }
                 }
             }
+            $scope.accept = function () {
+                adminService.approve($scope.activeWish.id).then(function (response) {
 
-            vm.setActive = function (wish) {
+                   $scope.getAllWishes();
+                }, function (response) {
 
-                vm.activeWish = _.find(vm.wishes, { id: wish.id });
-            }
+                });
+            };
+
+            $scope.decline = function () {
+                adminService.decline($scope.activeWish.id).then(function (response) {
+                    $scope.getAllWishes();
+                });
+            };
+            $scope.setActive = function (wishId) {
+
+                $scope.activeWish = _.find($scope.wishes, { id: wishId });
+            };
+            $scope.getAllWishes = function (wishId) {
+
+                adminService.getAllWishes().then(function (response) {
+                    $scope.wishes = response.data;
+                    $scope.setActive($scope.wishes[0].id);
+                });
+            };
+            $scope.getAllWishes();
 
         }
 }());

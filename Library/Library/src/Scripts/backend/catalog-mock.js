@@ -67,7 +67,7 @@
                 authors: ['Томас Кормен', 'Чарльз Лейзерсон', 'Рональд Ривест', 'Клиффорд Штайн'],
                 year: 1985,
                 pages: 954,
-                available: 7,
+                available: 3,
                 count: 8,
                 rating: 4,
                 description: 'Книга представляет собой перевод учебника по курсу построения и анализа эффективных алгоритмов, написанного в Массачусетском технологическом институте; в ней разбираются важнейшие классы быстрых алгоритмов и приёмы их построения. Изложение подробное и математически строгое. Книгу можно использовать в качестве учебника и справочника; она будет полезна как студентам, так и профессионалам в области IT.'
@@ -80,7 +80,7 @@
                 authors: ['И. К. Сафронов'],
                 year: 2001,
                 pages: 15,
-                available: 0,
+                available: 3,
                 count: 3,
                 rating: 1,
                 description: 'Язык программирования QBasic на протяжении многих лет пользуется огромным спросом среди начинающих и опытных программистов. Данный сборник задач содержит массу авторских разработок, которые позволяют убедиться в оригинальности и огромных возможностях Бейсика. Именно огромный читательский спрос на первое издание побудил автора заняться разработкой второго, не менее увлекательного самоучителя.'
@@ -251,5 +251,36 @@
 
             return [200, wishes, {}];
         });
+
+        $httpBackend.whenPOST('/api/wishes/approve').respond(function (method, url, data) {
+
+            var items = _.remove(wishes, function (wish) {
+                return wish.id === +data;
+            });
+
+            if (items.length > 0) {
+
+                items[0].id = orderCounter++;
+                orders.push(items[0]);
+                return [200, wishes, {}];
+            } else {
+                return [404];
+            }
+            
+        });
+        $httpBackend.whenPOST('/api/wishes/decline').respond(function (method, url, data) {
+
+            var items = _.remove(wishes, function (wish) {
+                return wish.id === +data;
+            });
+
+            if (items.length > 0) {
+                return [200, wishes, {}];
+            } else {
+                return [404];
+            }
+            
+        });
+
     }
 }());

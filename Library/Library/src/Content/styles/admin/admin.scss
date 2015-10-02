@@ -1,4 +1,32 @@
-﻿.user-order-card {
-    width: 300px;
-    position: inherit;
+﻿.book-order-card {
+    display: inline-block;
+    img {
+        width: 200px;
+        border: 1px solid $dark-gray;
+    }
+    .book-order-description {
+        display: inline-block;
+    }
+}
+.user-order-card {
+    margin: 0px 15px 15px 0;
+    width: 500px;
+    display: inline-block;
+}
+.order-approve-controls {
+    button {
+        margin: 5px;
+    }
+}
+.book-order-panel {
+    display: inline-block;
+    img {
+        height: 250px;
+    }
+}
+.book-order-description {
+    display: inline-block;
+}
+.book-order-cover {
+    display: inline-block;
 }
