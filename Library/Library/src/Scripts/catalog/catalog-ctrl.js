@@ -23,6 +23,14 @@
             });
         }
 
+        $('#book-carousel').on('wheel', function (e) {
+            if (e.originalEvent.deltaY > 0) {
+                console.log('up!');
+            } else {
+                console.log('down!');
+            }
+        });
+
         vm.setActive = function (bookId) {
             vm.activeBook = _.find(vm.books, { id: bookId });
         }
@@ -30,6 +38,14 @@
         vm.isActive = function (bookId) {
             if (vm.activeBook.id === bookId) {
                 return 'active';
+            }
+        }
+
+        vm.zIndex = function (bookId) {
+            if (vm.isActive(bookId)) {
+                if (!vm.mouseIn) {
+                    return { 'z-index': '1000' };
+                }
             }
         }
     }

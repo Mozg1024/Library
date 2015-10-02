@@ -1,7 +1,7 @@
-﻿<aside class="item-list-container">
-    <ul>
+﻿<aside class="item-list-container" ng-mouseenter="vm.mouseIn = true" ng-mouseleave="vm.mouseIn = false">
+    <ul id="book-carousel">
         <li ng-repeat="book in vm.books" ng-click="vm.setActive(book.id)" ng-class="vm.isActive(book.id)">
-            <div aside-item="{ image: book.cover, footer: { title: 'Книг доступно', count: book.available } }"></div>
+            <div aside-item="{ popupTitle: book.title, image: book.cover, footer: { title: 'Книг доступно', count: book.available } }" ng-style="vm.zIndex(book.id)"></div>
         </li>
     </ul>
 </aside>
