@@ -1,6 +1,6 @@
 ﻿<aside class="item-list-container">
     <ul>
-        <li ng-repeat="wish in vm.wishes" ng-click="vm.setActive(wish)" ng-class="vm.isActive(wish)">
+        <li ng-repeat="wish in wishes" ng-click="setActive(wish.id)" ng-class="isActive(wish.id)">
             <div aside-item="{ image: wish.cover, footer: { title: 'Номер заявки', count: wish.id } }"></div>
         </li>
     </ul>
@@ -8,6 +8,6 @@
 
 <div class="main-container">
 
-    <div order-control-panel wish-id="{{vm.activeWish.id}}" book-id="{{vm.activeWish.bookId}}" user-id="{{vm.activeWish.userId}}"></div> 
+    <div ng-show="wishes.length" order-control-panel wish-id="{{activeWish.id}}" book-id="{{activeWish.bookId}}" user-id="{{activeWish.userId}}" accept="accept()" decline="decline()"></div> 
 
 </div>

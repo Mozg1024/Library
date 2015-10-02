@@ -5,11 +5,11 @@
 
         function adminService ($http) {
             return {
-                approve: function (wish) {
-                    return $http.post('/api/wishes/approve', wish);
+                approve: function (wishId) {
+                    return $http.post('/api/wishes/approve', wishId);
                 },
-                decline: function (wish) {
-                    return $http.post('/api/wishes/decline', wish);
+                decline: function (wishId) {
+                    return $http.post('/api/wishes/decline', wishId);
                 },
                 getAllWishes: function () {
                      return $http.get('/api/wishes');
